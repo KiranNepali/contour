@@ -45,13 +45,13 @@ export default function Footer({}: Props) {
 
             {/* Links */}
             <div className="flex flex-col gap-4 text-sm">
-              <span className="text-secondary-300 cursor-pointer hover:ml-2 hover:font-semibold duration-300 hover:text-secondary-400">
+              <span className="text-secondary-400 cursor-pointer hover:ml-2 hover:font-semibold duration-300 hover:text-secondary-400">
                 Uttardhoka, Lazimpath, Kathmandu,Nepal +977-9803267220
               </span>
 
               <div className="flex flex-col gap-2">
                 <span className="font-semibold">Email:</span>
-                <span className="text-secondary-100">
+                <span className="text-secondary-400">
                   for inquiries: inquiry@contourexpedition.com for booking:
                   book@contourexpeditions.com
                 </span>
