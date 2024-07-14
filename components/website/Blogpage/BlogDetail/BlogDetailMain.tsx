@@ -27,7 +27,7 @@ export default function BlogDetailMain({}: Props) {
               BLOG TITLE
             </h1>
             {/* intro  */}
-            <p className="md:w-[70%] w-full mx-auto text-secondary-500">
+            <p className="md:w-[70%] w-full mx-auto text-zinc-700 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Cupiditate quisquam corrupti dignissimos nisi eveniet fugiat nemo
               dolorem corporis cum. Deserunt rem tempora, doloremque animi
@@ -79,7 +79,7 @@ export default function BlogDetailMain({}: Props) {
               <h2 className="font-semibold tracking-wide italic">
                 1. HERE IS THE TITLE
               </h2>
-              <p>
+              <p className="text-zinc-700 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Consequatur repellendus eum saepe iusto, distinctio asperiores
                 rem quis cupiditate minus laborum magnam aliquam molestiae quos
@@ -98,7 +98,7 @@ export default function BlogDetailMain({}: Props) {
               <h2 className="font-semibold tracking-wide italic">
                 2. HERE IS THE TITLE
               </h2>
-              <p>
+              <p className="text-zinc-700 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Consequatur repellendus eum saepe iusto, distinctio asperiores
                 rem quis cupiditate minus laborum magnam aliquam molestiae quos
@@ -123,22 +123,6 @@ export default function BlogDetailMain({}: Props) {
                 alt="banner-image"
                 className="absolute top-0 left-0 rounded-3xl w-full h-full object-cover object-bottom"
               ></Image>
-
-              {/* <div className="relative z-20 w-10/12 flex justify-between items-center gap-5 mx-auto">
-              <div className="w-[50%] flex items-start justify-start flex-col gap-2">
-                <span className="text-lg font-medium text-secondary-100">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Natus, pariatur.
-                </span>
-                <h1 className="text-6xl tracking-wide title font-bold text-secondary-50">
-                  You Get Now Memorable Wonderful Outdoor Experiences
-                </h1>
-              </div>
-
-              <div className="cursor-pointer w-[8rem] text-primary-50 whitespace-nowrap h-[8rem] p-1 border  border-primary-100 rounded-full flex justify-center items-center text-wrap text-center  z-20 left-[50%] -translate-x-[50%] text-sm">
-                <span>CONTACT US</span>
-              </div>
-            </div> */}
             </div>
 
             {/* topic 3  */}
@@ -146,7 +130,7 @@ export default function BlogDetailMain({}: Props) {
               <h2 className="font-semibold tracking-wide italic">
                 3. HERE IS THE TITLE
               </h2>
-              <p>
+              <p className="text-zinc-700 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Consequatur repellendus eum saepe iusto, distinctio asperiores
                 rem quis cupiditate minus laborum magnam aliquam molestiae quos
@@ -162,10 +146,8 @@ export default function BlogDetailMain({}: Props) {
 
             {/* conlcuesion  */}
             <div className="flex w-full md:w-[70%] mx-auto flex-col gap-2">
-              <h2 className="font-semibold tracking-wide italic">
-                Conclusion
-              </h2>
-              <p>
+              <h2 className="font-semibold tracking-wide italic">Conclusion</h2>
+              <p className="text-zinc-700 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Consequatur repellendus eum saepe iusto, distinctio asperiores
                 rem quis cupiditate minus laborum magnam aliquam molestiae quos
@@ -184,16 +166,16 @@ export default function BlogDetailMain({}: Props) {
           <div className="flex mx-auto flex-col md:flex-row gap-5 justify-between md:items-center items-start w-full md:w-[70%]">
             {/* TAGS  */}
             <div className="flex justify-center items-center gap-2">
-              <span className="bg-secondary-100 rounded-3xl text-[12px] text-secondary-500 px-5 py-1.5">
+              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag1
               </span>
-              <span className="bg-secondary-100 rounded-3xl text-[12px] text-secondary-500 px-5 py-1.5">
+              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag2
               </span>
-              <span className="bg-secondary-100 rounded-3xl text-[12px] text-secondary-500 px-5 py-1.5">
+              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag3
               </span>
-              <span className="bg-secondary-100 rounded-3xl text-[12px] text-secondary-500 px-5 py-1.5">
+              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag4
               </span>
             </div>

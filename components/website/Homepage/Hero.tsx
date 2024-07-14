@@ -57,10 +57,10 @@ export default function Hero({}: Props) {
             className="w-full h-full text-sm text-secondary-100 p-3 placeholder:text-secondary-100 placeholder:text-sm  outline-none bg-transparent"
             placeholder="Search"
           />
-          <div className="w-[4rem] flex cursor-pointer rounded-r-3xl justify-center items-center h-full bg-primary-default">
+          <div className="w-[4rem] flex cursor-pointer rounded-r-3xl justify-center items-center h-full bg-yellow-500">
             <Icon
               icon="quill:search"
-              className="w-[1.5rem] h-[1.5rem]  object-cover text-secondary-500 pointer-events-none object-center "
+              className="w-[1.5rem] h-[1.5rem]  object-cover text-zinc-100 pointer-events-none object-center "
             />
           </div>
         </div>

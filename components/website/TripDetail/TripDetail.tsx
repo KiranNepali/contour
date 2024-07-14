@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
+import Lhotse from "@/public/Lhotse-peak.jpg";
 type Props = {};
 
 function TripDetailMain({}: Props) {
@@ -49,7 +50,7 @@ function TripDetailMain({}: Props) {
           <Image
             width={1000}
             height={1000}
-            src="https://images.unsplash.com/photo-1486525546686-3cd5484691f4?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={Lhotse}
             alt="expedition-image"
             className="absolute top-0 brightness-50 left-0 w-full h-full object-cover object-top"
           />
@@ -94,27 +95,12 @@ function TripDetailMain({}: Props) {
                 Overview
               </div>
               <div className="w-full  text-secondary-400">
-                Everest Circuit Trek, also known as Everest Round Trek, is a
-                classic expedition-style trek around the world’s seventh highest
-                peak, Everest 8167m and its broad massif of 7000m peaks. Everest
-                Circuit is a challenging trek in the western part of Nepal,
-                offering full adventure and off the beaten path experience in
-                the remote and unspoilt region of Nepal. Everest circuit trek
-                itinerary travels through serene, isolated regions full of
-                natural beauty, crossing through highlands and high passes with
-                astonishing viewpoints. The route offers constant mountains
-                views while passing through remote villages and astonishing
-                landscape including several high passes, dense forests and
-                glaciers. Our 20 days Everest circuit trek is a fully guided and
-                supported trek with camping accommodation throughout the trek.
-                Our journey to Everest round trek starts with a short flight to
-                Pokhara and then followed by an off-road drive to Darbang the
-                next day. Our actual trek commences from Darbang as we follow
-                the well-paced itinerary which we have meticulously devised
-                keeping every important aspect in mind.
+                {`Mount Lhotse is one of the world's tallest mountains, with its
+                summit reaching 8,516 meters (27,940 feet) above sea level. Its
+                high altitude presents significant challenges to climbers due to
+                decreased oxygen levels and extreme weather conditions.`}
               </div>
             </div>
-
             {/* iternary  */}
             <div
               id="itinerary"

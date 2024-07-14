@@ -50,6 +50,10 @@ export default function Navbar({}: Props) {
   const [currentData, setCurrentData] = useState<any[]>([]);
 
   const handleOpenLink = (item: string) => {
+    if (item === "Home") {
+      setOpenNav(false);
+      return;
+    }
     if (item === "Mountaineering") {
       setCurrentData(Mountaineering);
     } else if (item === "Trekking") {
@@ -59,7 +63,7 @@ export default function Navbar({}: Props) {
   };
 
   const handleOpenCompLink = () => {
-    setOpenNav(!openNav);
+    setOpenCompNav(!openCompNav);
   };
   const Links = ["Home", "Mountaineering", "Trekking"];
 
@@ -73,7 +77,7 @@ export default function Navbar({}: Props) {
                 key={item}
                 href="/"
                 onClick={() => handleOpenLink(item)}
-                className=""
+                className="text-zinc-700  hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
               >
                 {item}
               </Link>
@@ -88,11 +92,24 @@ export default function Navbar({}: Props) {
             />
           </div>
           <div className="flex gap-8 text-[14px] font-medium text-secondary-400">
-            <Link href="/blog">Blog</Link>
-            <div className="relative group cursor-pointer">
-              <div onClick={() => handleOpenCompLink()}>Company</div>
+            <Link
+              href="/blog"
+              className="text-zinc-700  hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+            >
+              Blog
+            </Link>
+            <div
+              onClick={() => handleOpenCompLink()}
+              className="text-zinc-700  cursor-pointer hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+            >
+              Company
             </div>
-            <Link href="/contact_us">Contact us</Link>
+            <Link
+              href="/contact_us"
+              className="text-zinc-700   hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+            >
+              Contact us
+            </Link>
           </div>
         </div>
       </div>
@@ -120,27 +137,42 @@ export default function Navbar({}: Props) {
                 {/* package */}
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
-                    <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                      <Image
-                        src={Package}
-                        alt=""
-                        className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                      ></Image>
-                    </div>
-                    <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                      <Image
-                        src={Package}
-                        alt=""
-                        className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                      ></Image>
-                    </div>
-                    <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                      <Image
-                        src={Package}
-                        alt=""
-                        className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                      ></Image>
-                    </div>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
                   </div>
                   <div className="">View all button</div>
                 </div>
@@ -158,10 +190,21 @@ export default function Navbar({}: Props) {
             exit={{ translateY: "-100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             ref={navContainerRef}
-            className="w-full fixed py-3 top-[4rem] left-0 z-40 bg-yellow-50"
+            className="w-full fixed py-10 top-[4rem] left-0 z-40 bg-yellow-50"
           >
-            <div className="w-11/12 relative h-full mx-auto flex justify-center items-center">
-            
+            <div className="w-11/12 relative h-full mx-auto gap-10 font-medium text-zinc-700 flex justify-center items-center">
+              <Link href="/about_us" onClick={handleOpenCompLink}>
+                About us
+              </Link>
+              <Link href="/our_team" onClick={handleOpenCompLink}>
+                Our Team
+              </Link>
+              <Link href="/message_from_ceo" onClick={handleOpenCompLink}>
+                Message from CEO
+              </Link>
+              <Link href="/certificates" onClick={handleOpenCompLink}>
+                Certificates
+              </Link>
             </div>
           </motion.div>
         )}

@@ -50,7 +50,7 @@ export default function Faq({}: Props) {
           <div
             onClick={() => handleOpenAns(index)}
             key={index}
-            className="w-full rounded-3xl bg-white cursor-pointer break-inside-avoid px-5 pt-5 pb-2 flex flex-col gap-1 justify-between shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
+            className="w-full rounded-3xl  cursor-pointer break-inside-avoid px-5 pt-5 pb-2 flex flex-col gap-1 justify-between shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
           >
             {/* question  */}
             <div className="w-ful pb-3 gap-2  flex justify-between items-center">
@@ -60,13 +60,13 @@ export default function Faq({}: Props) {
               <span className="cursor-pointer overflow-hidden w-[1.5rem] h-[1.5rem]">
                 <Icon
                   icon="mdi:arrow-down-drop"
-                  className="w-full h-full object-cover text-primary-default object-center"
+                  className="w-full h-full object-cover text-yellow-500 object-center"
                 />
               </span>
             </div>
             {/* ans  */}
             <p
-              className={`h-0 overflow-hidden w-full text-sm text-secondary-400 text-start ans-${index}`}
+              className={`h-0 overflow-hidden leading-relaxed w-full text-sm text-secondary-400 text-start ans-${index}`}
             >
               {item.answer}
             </p>

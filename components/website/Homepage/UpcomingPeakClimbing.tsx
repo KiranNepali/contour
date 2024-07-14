@@ -15,7 +15,7 @@ export default function UpcomingPeakClimbing({}: Props) {
           <h1 className="text-3xl uppercase text-secondary-500  font-bold">
             Upcoming peak climbing
           </h1>
-          <p className="text-secondary-300 w-[50%]">
+          <p className="text-secondary-300 text-center leading-relaxed w-[50%]">
             Don’t miss out on the opportunity to experience the world like never
             before. Contact us today to book your next unforgettable journey
             with Contour Expedition.
