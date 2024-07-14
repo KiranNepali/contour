@@ -9,6 +9,7 @@ import CertifiedLogo1 from "@/public/logo/certified1.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Banner from "@/public/banner.webp";
 type Props = {};
 
 gsap.registerPlugin(useGSAP);
@@ -32,21 +33,12 @@ export default function Hero({}: Props) {
   return (
     <div className="w-11/12 mx-auto h-[95vh] mt-[9vh] rounded-3xl overflow-hidden relative text-white flex justify-center items-center">
       {/* image  */}
-      <div
-        ref={heroBgImgRef}
-        style={{
-          backgroundImage: `url('https://images.pexels.com/photos/264151/pexels-photo-264151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "absolute",
-          filter: "brightness(50%)",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
-        className="w-full h-screen z-10 flex justify-center items-center relative"
-      ></div>
+
+      <Image
+        src={Banner}
+        alt=""
+        className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-50"
+      ></Image>
 
       {/* middle  */}
       <div className="flex flex-col w-full gap-10">

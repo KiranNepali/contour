@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import AboutusHero from "./AboutusHero";
+import Aboutus from "./Aboutus";
 
-type Props = {}
+type Props = {};
 
 export default function AboutUsMain({}: Props) {
   return (
-    <div>AboutUsMain</div>
-  )
+    <div>
+      <AboutusHero />
+      <Aboutus />
+    </div>
+  );
 }

@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import OurTeamHero from "./OurTeamHero";
+import OurTeam from "./OurTeam";
 
-type Props = {}
+type Props = {};
 
 export default function OurTeamMain({}: Props) {
   return (
-    <div>OurTeamMain</div>
-  )
+    <div>
+      <OurTeamHero />
+      <OurTeam/>
+    </div>
+  );
 }

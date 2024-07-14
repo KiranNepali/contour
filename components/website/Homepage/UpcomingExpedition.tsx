@@ -10,7 +10,7 @@ export default function UpcomingExpedition({}: Props) {
       {/* <Image alt="" src={ContourMap} className="w-full h-full absolute top-0 left-0"></Image> */}
       <div className="w-full flex justify-center items-center flex-col gap-10">
         {/* title top  */}
-        <div className="flex flex-col w-full justify-center items-start gap-2">
+        <div className="flex flex-col w-full justify-center items-center gap-2">
           <h1 className="text-3xl uppercase text-secondary-500  font-bold">
             Upcoming Expedition
           </h1>

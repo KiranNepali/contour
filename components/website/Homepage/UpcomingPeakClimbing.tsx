@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 // import ContourMap from "@/public/Contour-Map.svg";
 type Props = {};
 
@@ -10,7 +11,7 @@ export default function UpcomingPeakClimbing({}: Props) {
       {/* <Image alt="" src={ContourMap} className="w-full h-full absolute top-0 left-0"></Image> */}
       <div className="w-full flex justify-center items-center flex-col gap-10">
         {/* title top  */}
-        <div className="flex flex-col w-full text-end justify-center items-end gap-2">
+        <div className="flex flex-col w-full text-end justify-center items-center gap-2">
           <h1 className="text-3xl uppercase text-secondary-500  font-bold">
             Upcoming peak climbing
           </h1>
@@ -24,7 +25,8 @@ export default function UpcomingPeakClimbing({}: Props) {
         {/* cards  */}
         <div className="grid w-full grid-cols-4 gap-4">
           {expeditions.map((item, index) => (
-            <div
+            <Link key={index} href="trip/trip_detail">
+              <div
               key={index}
               className="w-full cursor-pointer group hover:scale-95 duration-300 overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]"
             >
@@ -54,6 +56,7 @@ export default function UpcomingPeakClimbing({}: Props) {
                 </p>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>
