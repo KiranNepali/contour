@@ -25,7 +25,7 @@ export default function OtherActivitiesHero({ activity }: any) {
           className="absolute top-0 left-0 w-full h-full object-cover object-center"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
-        <h1 className="text-3xl md:text-6xl uppercase relative tracking-wide mt-10 title font-bold text-secondary-50">
+        <h1 className="text-3xl md:text-6xl uppercase relative tracking-wide mt-10 font-bold text-secondary-50">
           {name}
         </h1>
       </div>

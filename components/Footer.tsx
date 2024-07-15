@@ -12,7 +12,7 @@ function Footer({}: Props) {
   return (
     <>
       <footer
-        className={` md:h-[60vh] z-10 fixed  bottom-0 left-0   bg-yellow-50  w-full    shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5`}
+        className={` md:h-[60vh] z-10 fixed  bottom-0 left-0   bg-yellow-50 w-full    shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5`}
       >
         <div className="relative block h-40 lg:col-span-2 lg:h-full">
           <Image

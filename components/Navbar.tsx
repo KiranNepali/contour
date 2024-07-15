@@ -70,7 +70,7 @@ function Navbar({}: Props) {
     <>
       <div
         ref={navContainerRef}
-        className={`fixed z-[100] nav-container bg-yellow-50   text-secondary-500 top-0  left-0 w-full h-[4rem] `}
+        className={`fixed z-[100] nav-container bg-yellow-50  text-secondary-500 top-0  left-0 w-full h-[4rem] `}
       >
         {/* mobile nav  */}
         {/* <div
@@ -145,7 +145,7 @@ function Navbar({}: Props) {
                 <div className="flex flex-col">
                   {expeditionsLink.map((trek) => (
                     <div key={trek.href} className="py-1 flex flex-col">
-                      <Link  href="">
+                      <Link href="">
                         <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
                           {trek.name}
                         </div>
@@ -215,7 +215,7 @@ function Navbar({}: Props) {
                 <div className="flex flex-col">
                   {treksLink.map((trek) => (
                     <div key={trek.href} className="py-1 flex flex-col">
-                      <Link  href="">
+                      <Link href="">
                         <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
                           {trek.name}
                         </div>
@@ -458,18 +458,6 @@ function Navbar({}: Props) {
                     </Link>
                   </li>
                 ))}
-                {/* CONTACT US  */}
-                <Link href="/contact_us" className="group relative">
-                  <span
-                    className={` hover:text-primary-600 ${
-                      currentRoute.includes("/contact_us")
-                        ? "text-primary-600 font-medium scale-110 duration-[0.5]"
-                        : ""
-                    }`}
-                  >
-                    Contact us
-                  </span>
-                </Link>
               </ul>
             </div>
 
@@ -511,6 +499,7 @@ export default Navbar;
 const companyLinks = [
   { name: "About us", href: "/about_us" },
   { name: "Our team", href: "/our_team" },
+  { name: "Message from CEO", href: "/message_from_ceo" },
   { name: "Certificates", href: "/certificates" },
 ];
 

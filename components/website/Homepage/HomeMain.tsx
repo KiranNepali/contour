@@ -9,6 +9,7 @@ import ServicesHome from "./ServicesHome";
 import OurExpert from "./OurExpert";
 import UpcomingExpedition from "./UpcomingExpedition";
 import Banner from "./Banner";
+import UpcomingPeakClimbing from "./UpcomingPeakClimbing";
 type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +32,7 @@ function HomeMain({}: any) {
             <UpcomingExpedition />
           </div>
           <div className="w-11/12 mx-auto">
-            <UpcomingExpedition />
+            <UpcomingPeakClimbing />
           </div>
           <div className="w-11/12 mx-auto">
             <Faq />

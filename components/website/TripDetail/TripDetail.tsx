@@ -79,7 +79,7 @@ function TripDetailMain({}: Props) {
 
             <Link
               href="/booking"
-              className={`cursor-pointer hidden   text-nowrap w-full text-secondary-50  0 rounded-3xl  duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
+              className={`cursor-pointer hiddenl bg-yellow-400   text-nowrap w-full text-white  0 rounded-3xl  duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
             >
               Book now
             </Link>
