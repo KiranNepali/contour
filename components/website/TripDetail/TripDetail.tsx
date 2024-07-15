@@ -46,7 +46,7 @@ function TripDetailMain({}: Props) {
   return (
     <>
       <div className="w-full h-full  text-secondary-500 relative">
-        <div className="w-full h-[80vh] mt-[4rem] relative  flex justify-center items-end">
+        <div className="w-full h-[83vh] mt-[4rem] relative  flex justify-center items-end">
           <Image
             width={1000}
             height={1000}
@@ -79,7 +79,7 @@ function TripDetailMain({}: Props) {
 
             <Link
               href="/booking"
-              className={`cursor-pointer hidden   text-nowrap w-full text-secondary-50  bg-yellow-500 rounded-3xl  duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
+              className={`cursor-pointer hidden   text-nowrap w-full text-secondary-50  0 rounded-3xl  duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
             >
               Book now
             </Link>
@@ -274,8 +274,8 @@ function TripDetailMain({}: Props) {
           </div>
 
           {/* tab  link  */}
-          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8  sticky top-[4rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex   items-center">
-            <div className="flex w-full  flex-col gap-2 py-5 bg-yellow-500 px-3 h-[20vh] rounded-3xl">
+          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8  sticky top-[4rem] overflow-x-scroll md:overflow-x-visible bg-yellow-400 rounded-3xl md:top-[6rem] left-0  flex   items-center">
+            <div className="flex w-full  flex-col gap-2 py-5 0 px-3 h-[20vh] rounded-3xl">
               <span className="font-semibold">USD</span>
               <span className="text-sm text-white font-medium">
                 From $17500 / person

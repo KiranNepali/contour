@@ -1,12 +1,14 @@
-import OurTeamMain from "@/components/website/OurTeampage/OurTeamMain";
+import OurTeamMain from "@/components/website/OurTeam/OurTeamMain";
 import React from "react";
 
 type Props = {};
 
-export default function page({}: Props) {
+function page({}: Props) {
   return (
-    <main>
+    <main className=" z-[20] relative mb-[60vh] bg-yellow-50">
       <OurTeamMain />
     </main>
   );
 }
+
+export default page;

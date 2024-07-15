@@ -5,8 +5,8 @@ type Props = {};
 
 export default function page({}: Props) {
   return (
-    <div>
+    <main className=" z-[20] relative mb-[60vh] bg-yellow-50">
       <TripDetailMain />
-    </div>
+    </main>
   );
 }

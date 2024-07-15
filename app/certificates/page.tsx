@@ -1,12 +1,18 @@
+"use client";
 import CertificatesMain from "@/components/website/Certificate/Certificates";
-import React from "react";
+import React, { useEffect } from "react";
 
 type Props = {};
 
-export default function page({}: Props) {
+function Page({}: Props) {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   return (
-    <div>
+    <main className=" z-[20] relative mb-[60vh] bg-yellow-50">
       <CertificatesMain />
-    </div>
+    </main>
   );
 }
+
+export default Page;

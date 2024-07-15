@@ -28,7 +28,7 @@ export default function UpcomingPeakClimbing({}: Props) {
             <Link key={index} href="trip/trip_detail">
               <div
                 key={index}
-                className="w-full cursor-pointer group hover:scale-95 duration-300 bg-gradient-to-r from-yellow-100 to-yellow-50  overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]"
+                className="w-full cursor-pointer group hover:scale-95 duration-300  overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]"
               >
                 <div className="rounded-b-3xl w-full h-[70%] overflow-hidden">
                   <Image

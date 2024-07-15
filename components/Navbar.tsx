@@ -1,146 +1,158 @@
 "use client";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
-import ContourLogo from "@/public/logo/contour/contour_expeditions_logo.png";
-import Image from "next/image";
+import { Icon } from "@iconify/react";
+import Ham from "@/public/hamburger.png";
+import Logo from "@/public/contour_expeditions_logo.webp";
 import { AnimatePresence, motion } from "framer-motion";
-import Package from "@/public/banner.webp";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import { gsap, Expo } from "gsap";
+import { usePathname } from "next/navigation";
+import Package from "@/public/Lhotse-peak.jpg";
+
 type Props = {};
 
-const Mountaineering = [
-  {
-    id: 1,
-    name: "Above 8k",
-    packages: ["1", "2", "3", "4"],
-  },
-  {
-    id: 2,
-    name: "Above 6k",
-    packages: ["1", "2", "3", "4"],
-  },
-  {
-    id: 3,
-    name: "Below 6k",
-    packages: ["1", "2", "3", "4"],
-  },
+const sideNavLinks = [
+  { title: "Home", href: "" },
+  { title: "Trekking", href: "" },
+  { title: "Expedition", href: "" },
+  { title: "Other activities", href: "" },
+  { title: "Expeditions", href: "" },
+  { title: "Blogs", href: "" },
+  { title: "Contact us", href: "" },
 ];
 
-const Trekking = [
-  {
-    id: 1,
-    name: "Everest Trek",
-    packages: ["1", "2", "3", "4"],
-  },
-  {
-    id: 2,
-    name: "Manaslu Trek",
-    packages: ["1", "2", "3", "4"],
-  },
-  {
-    id: 3,
-    name: "Tilicho Trek",
-    packages: ["1", "2", "3", "4"],
-  },
-];
-
-export default function Navbar({}: Props) {
-  const navContainerRef = useRef<HTMLDivElement>(null);
+function Navbar({}: Props) {
   const [openNav, setOpenNav] = useState(false);
-  const [openCompNav, setOpenCompNav] = useState(false);
-  const [currentData, setCurrentData] = useState<any[]>([]);
+  const currentRoute = usePathname();
+  const sideNavRef = useRef(null);
+  const [sideNav, setSideNav] = useState(false);
+  const [sideLinks, setSideLinks] = useState(false);
 
-  const handleOpenLink = (item: string) => {
-    if (item === "Home") {
-      setOpenNav(false);
-      return;
+  const { contextSafe } = useGSAP();
+  const handleOpenNav = contextSafe(() => {
+    if (!sideNav) {
+      gsap.to(sideNavRef.current, { right: 0 });
+      gsap.to(".links", { opacity: 1, duration: 1 });
+      setSideNav(true);
     }
-    if (item === "Mountaineering") {
-      setCurrentData(Mountaineering);
-    } else if (item === "Trekking") {
-      setCurrentData(Trekking);
+    if (sideNav) {
+      gsap.to(sideNavRef.current, { right: "-100%" });
+      gsap.to(".links", { opacity: 0, duration: 1 });
+      setSideNav(false);
     }
-    setOpenNav(!openNav);
+  });
+
+  const handleLink = (index: number) => {
+    if (!sideLinks) {
+      gsap.to(`openlinks-${index}`, { height: "20vh" });
+      setSideLinks(true);
+    }
+    if (sideLinks) {
+      gsap.to(`openlinks-${index}`, { height: "0vh" });
+      setSideLinks(false);
+    }
   };
 
-  const handleOpenCompLink = () => {
-    setOpenCompNav(!openCompNav);
-  };
-  const Links = [ "Mountaineering", "Trekking", "Other Activities", "Training"];
+  // open animation
+  const navContainerRef = useRef(null);
+  // useGSAP(() => {
+  //   gsap.from(navContainerRef.current, {
+  //     height: 0,
+  //     transformOrigin: "top",
+  //     duration: 0.5,
+  //     ease: "power4.out",
+  //   });
+  // });
 
   return (
-    <div>
-      <div className="fixed top-0 left-0 z-50 w-full bg-yellow-50 flex flex-col justify-center items-center h-[4rem]">
-        <div className="w-11/12 relative h-full mx-auto flex justify-between items-center">
-          <div className="flex gap-5 text-[14px] font-medium text-secondary-400">
-            {Links.map((item) => (
+    <>
+      <div
+        ref={navContainerRef}
+        className={`fixed z-[100] nav-container bg-yellow-50   text-secondary-500 top-0  left-0 w-full h-[4rem] `}
+      >
+        {/* mobile nav  */}
+        {/* <div
+        ref={sideNavRef}
+        className="absolute  md:hidden w-[100vw] flex justify-center items-center top-0 right-[-100%]  h-[100vh] mx-auto bg-secondary-50 text-secondary-500 py-2"
+      >
+        <div className="w-11/12 mx-auto  grid grid-cols-1  gap-5 place-content-center pt-[5rem] text-start h-full place-items-start  flex-col justify-center items-center">
+          {sideNavLinks.map((link, index) => (
+            <>
               <Link
-                key={item}
-                href="/"
-                onClick={() => handleOpenLink(item)}
-                className="text-zinc-700  hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+                onClick={() => handleLink(index)}
+                key={index}
+                className="w-full"
+                href={link.href}
               >
-                {item}
+                <div className="title  links text-lg border-b mb-1 opacity-0 font-medium tracking-wide w-full flex justify-between items-center">
+                  {link.title} <span></span> <span></span>
+                </div>
+                <div
+                  className={`w-full  openlinks-${index} bg-green-200 h-0`}
+                ></div>
               </Link>
-            ))}
-          </div>
-          {/* LOGO */}
-          <div className="absolute top-[50%] left-[50%] -translate-x-[50%] mx-auto -translate-y-[50%]">
+            </>
+          ))}
+        </div>
+      </div> */}
+        {/* LOGO  */}
+        <div className="w-full md:hidden  text-secondary-500 relative  tracking-wide  mx-auto h-full flex  justify-between items-center gap-5">
+          {/* LOGO  */}
+          <Link href="/" className="cursor-pointer">
             <Image
-              src={ContourLogo}
-              alt="altcontour-logo"
-              className="w-[8rem]"
-            />
-          </div>
-          <div className="flex gap-8 text-[14px] font-medium text-secondary-400">
-          <Link
-              href="/"
-              className="text-zinc-700  hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Home
-            </Link>
-            <Link
-              href="/blog"
-              className="text-zinc-700  hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Blog
-            </Link>
-            <div
-              onClick={() => handleOpenCompLink()}
-              className="text-zinc-700  cursor-pointer hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Company
-            </div>
-            <Link
-              href="/contact_us"
-              className="text-zinc-700   hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Contact us
-            </Link>
+              src={Logo}
+              alt="contour-expedition-logo"
+              className="w-[6rem] h-[3rem] object-fit object-center"
+            ></Image>
+          </Link>
+          <div onClick={handleOpenNav} className="">
+            {sideNav === false ? (
+              <Image
+                width={500}
+                height={500}
+                src={Ham}
+                alt="ham"
+                className="w-[2rem]  h-[1rem] object-fit object-center pr-1"
+              />
+            ) : (
+              <Icon
+                icon="material-symbols:close"
+                className="w-[2rem]  h-[2rem] object-fit object-center pr-1"
+              />
+            )}
           </div>
         </div>
-      </div>
-
-      {/* render down */}
-      <AnimatePresence>
-        {openNav && (
-          <motion.div
-            initial={{ translateY: "-100%" }}
-            animate={{ translateY: "0" }}
-            exit={{ translateY: "-100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            ref={navContainerRef}
-            className="w-full fixed py-3 top-[4rem] left-0 z-40 bg-yellow-50"
-          >
-            <div className="w-11/12 relative h-full mx-auto flex justify-center items-center">
-              <div className="w-full content-nav flex gap-4 h-full">
-                <div className="w-[20%] h-full flex justify-start items-end flex-col gap-4 text-sm text-medium">
-                  {currentData.map((item) => (
-                    <span key={item.id} className="cursor-pointer">
-                      {item.name}
-                    </span>
+        <div className="w-11/12  text-secondary-500   tracking-wide  mx-auto h-full hidden md:flex justify-between items-center gap-5">
+          <div className="flex gap-5  text-[14px] font-medium">
+            {/* expedition  */}
+            <div className="group relative">
+              <div
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                  currentRoute.includes("/expedition")
+                    ? "text-primary-600 font-medium  duration-[0.5]"
+                    : ""
+                }`}
+              >
+                <span>Mounteering</span>
+                <Icon
+                  icon="gridicons:dropdown"
+                  className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
+                />
+              </div>
+              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex   duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+                <div className="flex flex-col">
+                  {expeditionsLink.map((trek) => (
+                    <div key={trek.href} className="py-1 flex flex-col">
+                      <Link  href="">
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                          {trek.name}
+                        </div>
+                      </Link>
+                    </div>
                   ))}
                 </div>
-                {/* package */}
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
                     <Link
@@ -184,37 +196,367 @@ export default function Navbar({}: Props) {
                 </div>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {openCompNav && (
-          <motion.div
-            initial={{ translateY: "-100%" }}
-            animate={{ translateY: "0" }}
-            exit={{ translateY: "-100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            ref={navContainerRef}
-            className="w-full fixed py-10 top-[4rem] left-0 z-40 bg-yellow-50"
-          >
-            <div className="w-11/12 relative h-full mx-auto gap-10 font-medium text-zinc-700 flex justify-center items-center">
-              <Link href="/about_us" onClick={handleOpenCompLink}>
-                About us
-              </Link>
-              <Link href="/our_team" onClick={handleOpenCompLink}>
-                Our Team
-              </Link>
-              <Link href="/message_from_ceo" onClick={handleOpenCompLink}>
-                Message from CEO
-              </Link>
-              <Link href="/certificates" onClick={handleOpenCompLink}>
-                Certificates
-              </Link>
+            {/* trekking  */}
+            <div className="group relative">
+              <div
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                  currentRoute.includes("/trek")
+                    ? "text-primary-600 font-medium  duration-[0.5]"
+                    : ""
+                }`}
+              >
+                <span>Trekking</span>
+                <Icon
+                  icon="gridicons:dropdown"
+                  className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
+                />
+              </div>
+              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+                <div className="flex flex-col">
+                  {treksLink.map((trek) => (
+                    <div key={trek.href} className="py-1 flex flex-col">
+                      <Link  href="">
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                          {trek.name}
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
+                  <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="">View all button</div>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+
+            {/* other activities  */}
+            <div className="group relative">
+              <div
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                  currentRoute.includes("/other_activities")
+                    ? "text-primary-600   duration-[0.5]"
+                    : ""
+                }`}
+              >
+                <span>Other Activities</span>
+                <Icon
+                  icon="gridicons:dropdown"
+                  className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
+                />
+              </div>
+              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+                <div className="flex flex-col">
+                  {activitiesLink.map((activity) => (
+                    <div key={activity.href} className="py-1 flex flex-col">
+                      <Link href={activity.href}>
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                          {activity.name}
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
+                  <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="">View all button</div>
+                </div>
+              </div>
+            </div>
+
+            {/* TRAINING  */}
+            <div className="group relative">
+              <div
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                  currentRoute.includes("/training")
+                    ? "text-primary-600   duration-[0.5]"
+                    : ""
+                }`}
+              >
+                <span>Training</span>
+                <Icon
+                  icon="gridicons:dropdown"
+                  className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
+                />
+              </div>
+              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw]    shadow p-5">
+                <div className="flex flex-col w-[20%]">
+                  {trainingLink.map((training) => (
+                    <div key={training.href} className="py-1 flex flex-col">
+                      <Link href={training.href}>
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                          {training.name}
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
+                  <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/trip/trip_detail"
+                      onClick={() => setOpenNav(false)}
+                    >
+                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                        <Image
+                          src={Package}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
+                        ></Image>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="">View all button</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* LOGO  */}
+          <Link
+            href="/home"
+            className="font-bold text-2xl  tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2"
+          >
+            <Image
+              src={Logo}
+              alt="contour-expedition-logo"
+              className="w-[8rem]  object-fit object-center"
+            ></Image>
+          </Link>
+
+          <div className="flex gap-3 text-[14px] font-medium items-center">
+            {/* home  */}
+            <Link href="/" className="group relative">
+              <span
+                className={` hover:text-primary-600 ${
+                  currentRoute === "/"
+                    ? "text-primary-600 font-medium scale-110 duration-[0.5]"
+                    : ""
+                }`}
+              >
+                Home
+              </span>
+            </Link>
+            <div className="group relative">
+              <div
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                  currentRoute.includes("/other_activities")
+                    ? "text-primary-600   duration-[0.5]"
+                    : ""
+                }`}
+              >
+                <span>Company</span>
+                <Icon
+                  icon="gridicons:dropdown"
+                  className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
+                />
+              </div>
+              <ul className="absolute hidden bg-yellow-50 rounded-3xl group-hover:block duration-[0.5] top-[100%] left-0  whitespace-nowrap   shadow p-5">
+                {companyLinks.map((link) => (
+                  <li key={link.href} className="py-1">
+                    <Link href={link.href}>
+                      <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                        {link.name}
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+                {/* CONTACT US  */}
+                <Link href="/contact_us" className="group relative">
+                  <span
+                    className={` hover:text-primary-600 ${
+                      currentRoute.includes("/contact_us")
+                        ? "text-primary-600 font-medium scale-110 duration-[0.5]"
+                        : ""
+                    }`}
+                  >
+                    Contact us
+                  </span>
+                </Link>
+              </ul>
+            </div>
+
+            {/* CONTACT US  */}
+            <Link href="/blogs" className="group relative">
+              <span
+                className={` hover:text-primary-600 ${
+                  currentRoute.includes("/blog")
+                    ? "text-primary-600 font-medium scale-110 duration-[0.5]"
+                    : ""
+                }`}
+              >
+                Blogs
+              </span>
+            </Link>
+            {/* CONTACT US  */}
+            <Link href="/contact_us" className="group relative">
+              <span
+                className={` hover:text-primary-600 ${
+                  currentRoute.includes("/contact_us")
+                    ? "text-primary-600 font-medium scale-110 duration-[0.5]"
+                    : ""
+                }`}
+              >
+                Contact us
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* render down */}
+    </>
   );
 }
+
+export default Navbar;
+
+const companyLinks = [
+  { name: "About us", href: "/about_us" },
+  { name: "Our team", href: "/our_team" },
+  { name: "Certificates", href: "/certificates" },
+];
+
+const activitiesLink = [
+  { name: "Canyoning", href: "/other_activities/rock_climbing" },
+  { name: "Rafting", href: "/other_activities/rafting" },
+  { name: "Heritage Tour ", href: "/other_activities/rock_climbing" },
+  { name: "Paragliding", href: "/other_activities/paragliding" },
+  { name: "Mountain Biking", href: "/other_activities/mountain_biking" },
+  { name: "Rock Climbing trip", href: "/other_activities/rock_climbing" },
+  { name: "Pilgrimage tour  ", href: "/other_activities/rock_climbing" },
+  { name: "Jungle Safari  ", href: "/other_activities/rock_climbing" },
+  { name: "Ice climbing ", href: "/other_activities/rock_climbing" },
+];
+
+const trainingLink = [
+  { name: "Basic Mountaineering course", href: "/other_activities/rafting" },
+  {
+    name: "Preparation for 8000m peak climbing course",
+    href: "/other_activities/heli_tour",
+  },
+  // { name: "Paragliding", href: "/other_activities/paragliding" },
+  // { name: "Mountain Biking", href: "/other_activities/mountain_biking" },
+  // { name: "Rock Climbing", href: "/other_activities/rock_climbing" },
+];
+
+const expeditionsLink = [
+  { name: "Above 8k", href: "/expedition/8000m" },
+  { name: "Above 7k", href: "/expedition/7000m" },
+  { name: "Above 7k", href: "/expedition/6000m" },
+  { name: "Above 5k", href: "/expedition/5000m" },
+];
+
+const treksLink = [
+  { name: "Annapurna Region", href: "/trek/everest_region_trekking" },
+  { name: "Everest Region", href: "/trek/everest_region_trekking" },
+  { name: "Langtang Region", href: "/trek/everest_region_trekking" },
+  { name: "Manaslu Region", href: "/trek/everest_region_trekking" },
+  { name: "Other treks  Region", href: "/trek/everest_region_trekking" },
+  { name: "Off beaten treks (Camping)", href: "/trek/everest_region_trekking" },
+  {
+    name: "Short trek",
+    href: "/trek/annapurna_region_trekking",
+  },
+  {
+    name: "High passes treks ",
+    href: "/trek/annapurna_region_trekking",
+  },
+];

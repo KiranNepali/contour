@@ -25,7 +25,7 @@ export default function UpcomingExpedition({}: Props) {
         <div className="grid w-full grid-cols-4 gap-4">
           {expeditions.map((item, index) => (
             <Link href="trip/trip_detail" key={index}>
-              <div className="w-full cursor-pointer group bg-gradient-to-r from-yellow-100 to-yellow-50  hover:scale-95 duration-300 overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]">
+              <div className="w-full cursor-pointer group  hover:scale-95 duration-300 overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]">
                 <div className="rounded-b-3xl w-full h-[85%] overflow-hidden">
                   <Image
                     width={1000}

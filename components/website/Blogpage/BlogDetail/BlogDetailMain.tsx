@@ -8,7 +8,7 @@ type Props = {};
 export default function BlogDetailMain({}: Props) {
   return (
     <>
-      <div className="w-11/12 relative md:w-10/12 mx-auto py-[5rem]">
+      <div className="w-11/12 relative z-20 md:w-10/12 mx-auto py-[5rem]">
         <Link href="/blog" className="w-[70%] mx-auto flex justify-start">
           <div className="text-zinc-700 z-40 hover:scale-105 duration-300 hover:text-zinc-800 flex  justify-center items-center">
             <div className="overflow-hidden title flex justify-center items-center">
@@ -166,16 +166,16 @@ export default function BlogDetailMain({}: Props) {
           <div className="flex mx-auto flex-col md:flex-row gap-5 justify-between md:items-center items-start w-full md:w-[70%]">
             {/* TAGS  */}
             <div className="flex justify-center items-center gap-2">
-              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
+              <span className="0 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag1
               </span>
-              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
+              <span className="0 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag2
               </span>
-              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
+              <span className="0 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag3
               </span>
-              <span className="bg-yellow-500 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
+              <span className="0 rounded-3xl text-[12px] text-zinc-800 px-5 py-1.5">
                 #tag4
               </span>
             </div>

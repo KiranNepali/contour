@@ -74,7 +74,7 @@ export default function Blogs({}: Props) {
           </div>
         </Link>
         <Link
-          href="blog/blog_detail"
+          href="/blog_detail"
           className="relative flex row-span-2 col-span-1 border border-gray-300/20 rounded-lg bg-dark"
         >
           <Image

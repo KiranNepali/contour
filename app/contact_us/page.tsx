@@ -1,12 +1,18 @@
-import ContactMain from "@/components/website/Contactpage/ContactMain";
-import React from "react";
+"use client";
+import ContactUs from "@/components/website/ContactUs/ContactUs";
+import React, { useEffect } from "react";
 
 type Props = {};
 
-export default function page({}: Props) {
+function Page({}: Props) {
+  useEffect(() => {
+    scrollTo(0, 0);
+  },[]);
   return (
-    <main>
-      <ContactMain />
+    <main className=" z-[20] relative mb-[60vh] bg-yellow-50">
+      <ContactUs />
     </main>
   );
 }
+
+export default Page;

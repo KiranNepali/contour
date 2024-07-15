@@ -18,7 +18,7 @@ export default function OurExpert({}: Props) {
         </p>
       </div>
       <div className="flex justify-center item mt-[3rem] px-1 gap-10">
-        <div className="w-[30rem] rounded-3xl bg-gradient-to-r from-yellow-100 to-yellow-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   flex">
+        <div className="w-[30rem] rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   flex">
           <Image
             src={MD}
             alt=""
@@ -39,7 +39,7 @@ export default function OurExpert({}: Props) {
           </div>
         </div>
 
-        <div className="w-[30rem] rounded-3xl bg-gradient-to-r from-yellow-100 to-yellow-50  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   flex">
+        <div className="w-[30rem] rounded-3xl  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   flex">
           <Image
             src={Guider}
             alt=""

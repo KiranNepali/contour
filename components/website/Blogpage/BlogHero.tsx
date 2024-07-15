@@ -21,7 +21,7 @@ export default function BlogHero({}: Props) {
         className="w-full h-screen z-10 flex justify-center items-center relative"
       ></div>
       <div className="relative z-10 flex items-center justify-center flex-col gap-2">
-        <h1 className="text-6xl uppercase relative tracking-wide mt-10 title font-bold text-primary-default">
+        <h1 className="text-6xl uppercase relative tracking-wide mt-10 title font-bold ">
           Blogs
         </h1>
         <p className="w-[80%] text-sm text-secondary-50 mx-auto text-center">

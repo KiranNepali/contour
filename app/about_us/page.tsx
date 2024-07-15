@@ -1,12 +1,16 @@
-import AboutUsMain from "@/components/website/AboutUspage/AboutUsMain";
-import React from "react";
+"use client";
+import AboutUsMain from "@/components/website/AboutUs/AboutUsMain";
+import { useEffect } from "react";
 
-type Props = {};
-
-export default function page({}: Props) {
+export default function Home() {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   return (
-    <main>
-      <AboutUsMain />
-    </main>
+    <>
+      <main className=" z-[20] relative mb-[60vh] bg-yellow-50">
+        <AboutUsMain />
+      </main>
+    </>
   );
 }

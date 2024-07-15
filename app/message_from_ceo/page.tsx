@@ -5,7 +5,7 @@ type Props = {};
 
 export default function page({}: Props) {
   return (
-    <div className="w-11/12 mx-auto flex flex-col">
+    <main className=" z-[20] relative mb-[60vh] bg-yellow-50">
       <MesssageFromCeo />
     </div>
   );
