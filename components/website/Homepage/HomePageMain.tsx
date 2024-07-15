@@ -29,11 +29,12 @@ export default function HomePageMain({}: Props) {
       <div className="w-11/12 mx-auto h-full">
         <UpcomingPeakClimbing />
       </div>
-      <div className="w-11/12 mx-auto h-full">
-        <OurExpert />
-      </div>
+
       <div className="w-11/12 mx-auto h-full">
         <FaqHome />
+      </div>
+      <div className="w-11/12 mx-auto h-full">
+        <OurExpert />
       </div>
     </div>
   );

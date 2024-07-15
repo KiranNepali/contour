@@ -12,7 +12,7 @@ export default function UpcomingExpedition({}: Props) {
       <div className="w-full flex justify-center items-center flex-col gap-10">
         {/* title top  */}
         <div className="flex flex-col w-full justify-center items-center gap-2">
-          <h1 className="text-3xl uppercase text-secondary-500  font-bold">
+          <h1 className="text-3xl tracking-wider uppercase text-secondary-500  font-bold">
             Upcoming Expedition
           </h1>
           <p className="text-secondary-300 text-center leading-relaxed  w-[50%]">
@@ -21,12 +21,11 @@ export default function UpcomingExpedition({}: Props) {
             with Contour Expedition.
           </p>
         </div>
-
         {/* cards  */}
         <div className="grid w-full grid-cols-4 gap-4">
           {expeditions.map((item, index) => (
             <Link href="trip/trip_detail" key={index}>
-              <div className="w-full cursor-pointer group hover:scale-95 duration-300 overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]">
+              <div className="w-full cursor-pointer group bg-gradient-to-r from-yellow-100 to-yellow-50  hover:scale-95 duration-300 overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]">
                 <div className="rounded-b-3xl w-full h-[85%] overflow-hidden">
                   <Image
                     width={1000}
@@ -41,7 +40,7 @@ export default function UpcomingExpedition({}: Props) {
                     Onboard
                   </span>
                 </div>
-                <div className="w-full h-[15%] text-sm px-5   flex items-center justify-between">
+                <div className="w-full h-[15%] text-sm px-5    flex items-center justify-between">
                   <span className="text-[13px] font-medium text-secondary-400">
                     {item.date}
                   </span>

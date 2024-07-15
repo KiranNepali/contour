@@ -65,13 +65,13 @@ export default function Navbar({}: Props) {
   const handleOpenCompLink = () => {
     setOpenCompNav(!openCompNav);
   };
-  const Links = ["Home", "Mountaineering", "Trekking"];
+  const Links = [ "Mountaineering", "Trekking", "Other Activities", "Training"];
 
   return (
     <div>
       <div className="fixed top-0 left-0 z-50 w-full bg-yellow-50 flex flex-col justify-center items-center h-[4rem]">
         <div className="w-11/12 relative h-full mx-auto flex justify-between items-center">
-          <div className="flex gap-8 text-[14px] font-medium text-secondary-400">
+          <div className="flex gap-5 text-[14px] font-medium text-secondary-400">
             {Links.map((item) => (
               <Link
                 key={item}
@@ -92,6 +92,12 @@ export default function Navbar({}: Props) {
             />
           </div>
           <div className="flex gap-8 text-[14px] font-medium text-secondary-400">
+          <Link
+              href="/"
+              className="text-zinc-700  hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+            >
+              Home
+            </Link>
             <Link
               href="/blog"
               className="text-zinc-700  hover:text-black  relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"

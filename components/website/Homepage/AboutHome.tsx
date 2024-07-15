@@ -10,7 +10,7 @@ export default function AboutHome({}: Props) {
         {/* CARDS  */}
         <div className="grid w-full mx-auto grid-cols-4 gap-2">
           <div className="flex items-start flex-col gap-2">
-            <h1 className="uppercase font-semibold text-3xl">Best sellers</h1>
+            <h1 className="uppercase font-semibold text-3xl tracking-wider">Best sellers</h1>
             <p className="text-zinc-700 leading-relaxed">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium aliquam exercitationem consectetur vel quibusdam cum

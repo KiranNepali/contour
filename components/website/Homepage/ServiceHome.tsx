@@ -29,7 +29,7 @@ export default function ServiceHome({}: Props) {
           {/* services  */}
           <div className="flex flex-col justify-start h-full items-start relative mx-auto  gap-4">
             <div className="z-10  relative  text-white   mx-auto flex text-end  justify-center items-end flex-col gap-2">
-              <h1 className="text-3xl uppercase text-secondary-500  font-bold">
+              <h1 className="text-3xl uppercase tracking-wider text-secondary-500  font-bold">
                 Why Choose Us
               </h1>
               <p className="text-secondary-300">

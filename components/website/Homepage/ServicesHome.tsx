@@ -17,7 +17,7 @@ export default function ServicesHome({}: Props) {
         {ServicesData.map((item, index) => (
           <div
             key={index}
-            className="w-full cursor-pointer p-10 rounded-3xl border"
+            className="w-full cursor-pointer p-10 bg-gradient-to-r from-yellow-100 to-yellow-50  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-3xl "
           >
             <div className="w-full justify-between flex items-center">
               <div className="flex flex-col gap-2">
