@@ -1,12 +1,12 @@
 import React from "react";
-import LogoIcon from "@/public/fav icon.svg";
+import LogoIcon from "@/public/contour_expeditions_logo.webp";
 import Image from "next/image";
 
 type Props = {};
 
 export default function Loading({}: Props) {
   return (
-    <div className="w-full h-screen flex  justify-center items-center">
+    <div className="w-full h-screen bg-yellow-50 relative z-[20] flex  justify-center items-center">
       <div className="">
         <Image
           src={LogoIcon}

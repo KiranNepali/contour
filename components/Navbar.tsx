@@ -129,9 +129,9 @@ function Navbar({}: Props) {
             {/* expedition  */}
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/expedition")
-                    ? "text-primary-600 font-medium  duration-[0.5]"
+                    ? "text-yellow-500 font-medium  duration-[0.5]"
                     : ""
                 }`}
               >
@@ -146,7 +146,7 @@ function Navbar({}: Props) {
                   {expeditionsLink.map((trek) => (
                     <div key={trek.href} className="py-1 flex flex-col">
                       <Link href="">
-                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
                           {trek.name}
                         </div>
                       </Link>
@@ -199,9 +199,9 @@ function Navbar({}: Props) {
             {/* trekking  */}
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/trek")
-                    ? "text-primary-600 font-medium  duration-[0.5]"
+                    ? "text-yellow-500 font-medium  duration-[0.5]"
                     : ""
                 }`}
               >
@@ -216,7 +216,7 @@ function Navbar({}: Props) {
                   {treksLink.map((trek) => (
                     <div key={trek.href} className="py-1 flex flex-col">
                       <Link href="">
-                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
                           {trek.name}
                         </div>
                       </Link>
@@ -270,9 +270,9 @@ function Navbar({}: Props) {
             {/* other activities  */}
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/other_activities")
-                    ? "text-primary-600   duration-[0.5]"
+                    ? "text-yellow-500   duration-[0.5]"
                     : ""
                 }`}
               >
@@ -287,7 +287,7 @@ function Navbar({}: Props) {
                   {activitiesLink.map((activity) => (
                     <div key={activity.href} className="py-1 flex flex-col">
                       <Link href={activity.href}>
-                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
                           {activity.name}
                         </div>
                       </Link>
@@ -341,9 +341,9 @@ function Navbar({}: Props) {
             {/* TRAINING  */}
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/training")
-                    ? "text-primary-600   duration-[0.5]"
+                    ? "text-yellow-500   duration-[0.5]"
                     : ""
                 }`}
               >
@@ -358,7 +358,7 @@ function Navbar({}: Props) {
                   {trainingLink.map((training) => (
                     <div key={training.href} className="py-1 flex flex-col">
                       <Link href={training.href}>
-                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
                           {training.name}
                         </div>
                       </Link>
@@ -425,9 +425,9 @@ function Navbar({}: Props) {
             {/* home  */}
             <Link href="/" className="group relative">
               <span
-                className={` hover:text-primary-600 ${
+                className={` hover:text-yellow-500 ${
                   currentRoute === "/"
-                    ? "text-primary-600 font-medium scale-110 duration-[0.5]"
+                    ? "text-yellow-500 font-medium scale-110 duration-[0.5]"
                     : ""
                 }`}
               >
@@ -436,9 +436,9 @@ function Navbar({}: Props) {
             </Link>
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/other_activities")
-                    ? "text-primary-600   duration-[0.5]"
+                    ? "text-yellow-500   duration-[0.5]"
                     : ""
                 }`}
               >
@@ -452,7 +452,7 @@ function Navbar({}: Props) {
                 {companyLinks.map((link) => (
                   <li key={link.href} className="py-1">
                     <Link href={link.href}>
-                      <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-primary-600 cursor-pointer">
+                      <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
                         {link.name}
                       </div>
                     </Link>
@@ -464,9 +464,9 @@ function Navbar({}: Props) {
             {/* CONTACT US  */}
             <Link href="/blogs" className="group relative">
               <span
-                className={` hover:text-primary-600 ${
+                className={` hover:text-yellow-500 ${
                   currentRoute.includes("/blog")
-                    ? "text-primary-600 font-medium scale-110 duration-[0.5]"
+                    ? "text-yellow-500 font-medium scale-110 duration-[0.5]"
                     : ""
                 }`}
               >
@@ -476,9 +476,9 @@ function Navbar({}: Props) {
             {/* CONTACT US  */}
             <Link href="/contact_us" className="group relative">
               <span
-                className={` hover:text-primary-600 ${
+                className={` hover:text-yellow-500 ${
                   currentRoute.includes("/contact_us")
-                    ? "text-primary-600 font-medium scale-110 duration-[0.5]"
+                    ? "text-yellow-500 font-medium scale-110 duration-[0.5]"
                     : ""
                 }`}
               >

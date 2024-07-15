@@ -21,7 +21,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const preloaderContainerRef = useRef<HTMLDivElement>(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
   useEffect(() => {
     const lenis = new Lenis();
@@ -42,7 +41,6 @@ export default function RootLayout({
     };
   }, []);
 
-  const currentRoute = usePathname();
 
   return (
     <html lang="en" className={poppins.className}>

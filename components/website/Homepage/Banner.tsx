@@ -71,8 +71,8 @@ function Banner({}: Props) {
       ></Image>
       <div className="relative z-20 w-11/12 md:w-10/12 flex flex-col md:flex-row justify-between items-center gap-5 mx-auto">
         <div className="md:w-[70%] flex items-start justify-start flex-col gap-2">
-          <span className="text-sm banner-desc  inline-block   md:text-lg font-medium text-secondary-100">
-            Contact Trivision for the best adventure of your life.
+          <span className="text-sm banner-desc  inline-block   md:text-lg  leading-relaxed text-zinc-200">
+            Contact contour expedition  for the best adventure of your life.
           </span>
           <h1
             ref={aboutTitleRef}
@@ -89,7 +89,7 @@ function Banner({}: Props) {
 
         <Link
           href="contact_us"
-          className="cursor-pointer w-[8rem] hover:w-[10rem] hover:h-[10rem] duration-300  hover:font-semibold text-primary-50 whitespace-nowrap h-[8rem] p-1 border  border-primary-100 rounded-full flex justify-center items-center text-wrap text-center   text-sm"
+          className="cursor-pointer w-[8rem] hover:w-[10rem] hover:h-[10rem] duration-300  hover:font-semibold text-white  whitespace-nowrap h-[8rem] p-1 border  border-yellow-50 rounded-full flex justify-center items-center text-wrap text-center   text-sm"
         >
           <span>CONTACT US</span>
         </Link>

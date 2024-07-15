@@ -47,7 +47,7 @@ export default function UpcomingExpedition({}: Props) {
                   <div className="cursor-pointer">
                     <Icon
                       icon="clarity:circle-arrow-solid"
-                      className="w-[2rem] h-[2rem] text-primary-500 rotate-90 "
+                      className="w-[2rem] h-[2rem] text-yellow-400 rotate-90 "
                     />
                   </div>
                 </div>

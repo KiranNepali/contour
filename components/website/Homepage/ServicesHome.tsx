@@ -21,7 +21,7 @@ export default function ServicesHome({}: Props) {
           >
             <div className="w-full justify-between flex items-center">
               <div className="flex flex-col gap-2">
-                <div className="w-[3rem] p-2 h-[3rem] bg-primary-default rounded-full">
+                <div className="w-[3rem] p-2 h-[3rem] bg-yellow-400 rounded-full">
                   <Image
                     src={item.icon}
                     alt={`${item.name}-logo`}
