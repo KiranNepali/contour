@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import BestSeller1 from "@/public/BestSellers/Best1.jpg";
+import BestSeller2 from "@/public/BestSellers/best2.webp";
+import BestSeller3 from "@/public/BestSellers/best3.jpg";
+import BestSeller4 from "@/public/BestSellers/best4.jpg";
+import BestSeller5 from "@/public/BestSellers/best2.jpg";
+import BestSeller6 from "@/public/BestSellers/best6.jpg";
+import BestSeller7 from "@/public/BestSellers/best7.jpg";
 
 type Props = {};
 
@@ -50,65 +57,143 @@ export default function AboutHome({}: Props) {
               </button>
             </Link>
           </div>
-          <div className="w-full h-[50vh] rounded-3xl overflow-hidden">
+          <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
+            <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+              {/* name  */}
+              <span className="font-semibold text-lg">Everest Base Camp</span>
+              {/* distance  */}
+              <span className="text-sm font-medium">5500m</span>
+              {/* place  */}
+              Alpine Trekking
+              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
             <Image
-              src="https://plus.unsplash.com/premium_photo-1700558686126-0d071e23e8a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={BestSeller1}
               alt=""
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
               width={1000}
               height={1000}
             />
           </div>
-          <div className="w-full h-[50vh] rounded-3xl overflow-hidden">
+          <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
+            <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+              {/* name  */}
+              <span className="font-semibold text-lg">Everest Base Camp</span>
+              {/* distance  */}
+              <span className="text-sm font-medium">5500m</span>
+              {/* place  */}
+              Alpine Trekking
+              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
             <Image
-              src="https://plus.unsplash.com/premium_photo-1700558686126-0d071e23e8a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={BestSeller2}
               alt=""
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
               width={1000}
               height={1000}
             />
           </div>
-          <div className="w-full h-[50vh]  rounded-3xl overflow-hidden">
+          <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
+            <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+              {/* name  */}
+              <span className="font-semibold text-lg">Everest Base Camp</span>
+              {/* distance  */}
+              <span className="text-sm font-medium">5500m</span>
+              {/* place  */}
+              Alpine Trekking
+              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
             <Image
-              src="https://plus.unsplash.com/premium_photo-1700558686126-0d071e23e8a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={BestSeller3}
               alt=""
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
               width={1000}
               height={1000}
             />
           </div>
-          <div className="w-full h-[50vh] mt-[-20%] rounded-3xl overflow-hidden">
+
+          <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
+            <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+              {/* name  */}
+              <span className="font-semibold text-lg">Everest Base Camp</span>
+              {/* distance  */}
+              <span className="text-sm font-medium">5500m</span>
+              {/* place  */}
+              Alpine Trekking
+              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
             <Image
-              src="https://plus.unsplash.com/premium_photo-1700558686126-0d071e23e8a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={BestSeller4}
               alt=""
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
               width={1000}
               height={1000}
             />
           </div>
-          <div className="w-full h-[50vh] rounded-3xl overflow-hidden">
+          <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
+            <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+              {/* name  */}
+              <span className="font-semibold text-lg">Everest Base Camp</span>
+              {/* distance  */}
+              <span className="text-sm font-medium">5500m</span>
+              {/* place  */}
+              Alpine Trekking
+              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
             <Image
-              src="https://plus.unsplash.com/premium_photo-1700558686126-0d071e23e8a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={BestSeller5}
               alt=""
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
               width={1000}
               height={1000}
             />
           </div>
-          <div className="w-full h-[50vh] rounded-3xl overflow-hidden">
+          <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
+            <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+              {/* name  */}
+              <span className="font-semibold text-lg">Everest Base Camp</span>
+              {/* distance  */}
+              <span className="text-sm font-medium">5500m</span>
+              {/* place  */}
+              Alpine Trekking
+              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
             <Image
-              src="https://plus.unsplash.com/premium_photo-1700558686126-0d071e23e8a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={BestSeller6}
               alt=""
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
               width={1000}
               height={1000}
             />
           </div>
-          <div className="w-full h-[50vh] rounded-3xl overflow-hidden">
+          <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
+            <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+              {/* name  */}
+              <span className="font-semibold text-lg">Everest Base Camp</span>
+              {/* distance  */}
+              <span className="text-sm font-medium">5500m</span>
+              {/* place  */}
+              Alpine Trekking
+              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
             <Image
-              src="https://plus.unsplash.com/premium_photo-1700558686126-0d071e23e8a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={BestSeller7}
               alt=""
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
               width={1000}
               height={1000}
             />

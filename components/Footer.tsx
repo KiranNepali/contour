@@ -32,19 +32,32 @@ function Footer({}: Props) {
                   {" "}
                   Call us{" "}
                 </span>
-
                 <a
                   href="#"
-                  className="block text-2xl font-medium text-gray-900 hover:opacity-75 sm:text-3xl"
+                  className="block text-lg font-medium text-gray-900 hover:opacity-75"
                 >
-                  0123456789
+                  +977-9803267220
                 </a>
               </p>
 
+              <p>
+                <span className="text-xs uppercase tracking-wide text-gray-500">
+                  {" "}
+                  Address
+                </span>
+                <a
+                  href="#"
+                  className="block text-lg font-medium text-gray-900 hover:opacity-75 "
+                >
+                  Uttardhoka, Lazimpath, <br /> Kathmandu,Nepal
+                </a>
+              </p>
+
+              {/* 
               <ul className="mt-8 space-y-1 text-sm text-gray-700">
                 <li>Monday to Friday: 10am - 5pm</li>
                 <li>Weekend: 10am - 3pm</li>
-              </ul>
+              </ul> */}
 
               <ul className="mt-8 flex gap-6">
                 <li>
@@ -172,16 +185,6 @@ function Footer({}: Props) {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <Link
-                      href="/blogs"
-                      className="text-gray-700 transition hover:opacity-75"
-                    >
-                      {" "}
-                      Blogs
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
                       href="#"
                       className="text-gray-700 transition hover:opacity-75"
                     >
@@ -196,7 +199,35 @@ function Footer({}: Props) {
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
-                      Expedition
+                      Mounteering
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href=""
+                      className="text-gray-700 transition hover:opacity-75"
+                    >
+                      {" "}
+                      Training
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/other_activities/rafting"
+                      className="text-gray-700 transition hover:opacity-75"
+                    >
+                      {" "}
+                      Other activities
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/blogs"
+                      className="text-gray-700 transition hover:opacity-75"
+                    >
+                      {" "}
+                      Blogs
                     </Link>
                   </li>
                 </ul>
@@ -233,6 +264,15 @@ function Footer({}: Props) {
                     >
                       {" "}
                       Certificates
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/message_from_ceo"
+                      className="text-gray-700 transition hover:opacity-75"
+                    >
+                      {" "}
+                      Message from CEO
                     </Link>
                   </li>
                   <li>

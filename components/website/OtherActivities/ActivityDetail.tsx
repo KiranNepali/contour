@@ -26,9 +26,7 @@ function AcitvityDetail({ activity }: any) {
           >
             <h1
               className={`relative tracking-wide  font-medium    ${
-                item.route === route
-                  ? "text-white"
-                  : "text-secondary-500"
+                item.route === route ? "text-white" : "text-secondary-500"
               }`}
             >
               {item.name}
@@ -52,7 +50,7 @@ function AcitvityDetail({ activity }: any) {
           {gallery.map((image: any, i: number) => (
             <div
               key={i}
-              className={`works  w-full  overflow-hidden group flex flex-col gap-[1rem] justify-start items-center relative cursor-pointer ${
+              className={`works rounded-3xl  w-full  overflow-hidden group flex flex-col gap-[1rem] justify-start items-center relative cursor-pointer ${
                 i === 0 || i === 4 || i === 5 || i === 6 ? "md:col-span-2" : ""
               } ${i === 2 ? "md:row-span-2" : ""}`}
             >
@@ -74,11 +72,27 @@ function AcitvityDetail({ activity }: any) {
       </div>
 
       <Link href="/booking" className="flex justify-end items-center w-full">
-        <div
-          className={`cursor-pointer  text-nowrap md:w-[20%] w-full mx-auto text-secondary-50 bg-gradient-to-r from-primary-600 to-primary-500   duration-200 flex justify-center items-center  px-5  h-[3rem] text-sm`}
-        >
-          Book now
-        </div>
+        <button className="bg-yellow-200 mt-4 text-center w-48 rounded-3xl h-14 relative font-sans text-black text-xl font-semibold group">
+          <div className="bg-yellow-400 rounded-3xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
+            <svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+              className="rotate-180"
+            >
+              <path
+                fill="#000000"
+                d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+              ></path>
+              <path
+                fill="#000000"
+                d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+              ></path>
+            </svg>
+          </div>
+          <p className="translate-x-2 text-sm">Book now ?</p>
+        </button>
       </Link>
     </div>
   );
