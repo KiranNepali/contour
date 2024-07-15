@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -14,37 +15,40 @@ export default function AboutHome({}: Props) {
               Best sellers
             </h1>
             <p className="text-zinc-700 leading-relaxed">
-              At <span className="font-medium italic">Contour Expeditions Pvt. Ltd.</span>, we specialize in
-              crafting unforgettable Mountaineering and Trekking experiences in
-              the capital of mountains. Join us for an adventure of a lifetime
-              and create memories that will last a lifetime.
+              At{" "}
+              <span className="font-medium italic">
+                Contour Expeditions Pvt. Ltd.
+              </span>
+              , we specialize in crafting unforgettable Mountaineering and
+              Trekking experiences in the capital of mountains. Join us for an
+              adventure of a lifetime and create memories that will last a
+              lifetime.
             </p>
 
             {/* BUTTON  */}
-            <button
-              type="button"
-              className="bg-yellow-200 mt-4 text-center w-48 rounded-3xl h-14 relative font-sans text-black text-xl font-semibold group"
-            >
-              <div className="bg-yellow-400 rounded-3xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
-                <svg
-                  width="25px"
-                  height="25px"
-                  viewBox="0 0 1024 1024"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="rotate-180"
-                >
-                  <path
-                    fill="#000000"
-                    d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-                  ></path>
-                  <path
-                    fill="#000000"
-                    d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-                  ></path>
-                </svg>
-              </div>
-              <p className="translate-x-2 text-sm">Know more ?</p>
-            </button>
+            <Link href="/about_us">
+              <button className="bg-yellow-200 mt-4 text-center w-48 rounded-3xl h-14 relative font-sans text-black text-xl font-semibold group">
+                <div className="bg-yellow-400 rounded-3xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
+                  <svg
+                    width="25px"
+                    height="25px"
+                    viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="rotate-180"
+                  >
+                    <path
+                      fill="#000000"
+                      d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                    ></path>
+                    <path
+                      fill="#000000"
+                      d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                    ></path>
+                  </svg>
+                </div>
+                <p className="translate-x-2 text-sm">Know more ?</p>
+              </button>
+            </Link>
           </div>
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden">
             <Image

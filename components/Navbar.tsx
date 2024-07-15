@@ -411,7 +411,7 @@ function Navbar({}: Props) {
           </div>
           {/* LOGO  */}
           <Link
-            href="/home"
+            href="/"
             className="font-bold text-2xl  tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2"
           >
             <Image
