@@ -4,20 +4,32 @@ import Service2 from "@/public/services/pure-natural.png";
 import Service3 from "@/public/services/people-safe.png";
 import Service4 from "@/public/services/effects.png";
 import Image from "next/image";
+import ContourMountain from "@/public/contour-mountain.jpg";
 type Props = {};
 
 export default function ServicesHome({}: Props) {
   return (
-    <div className="w-full mb-[5rem]">
-      <h1 className="text-3xl uppercase text-secondary-500 text-center  font-bold">
-        Our Services and works
-      </h1>
+    <div className="w-full mb-[5rem] relative">
+      {/* title  */}
+      <div className="w-auto flex-col flex gap-2 justify-center items-center">
+        <h1 className="text-3xl uppercase text-secondary-500 text-center  font-bold">
+          Our Services and works
+        </h1>
+        <hr className="bg-yellow-500 h-[2px] overflow-hidden w-[10%] rounded-full" />
+      </div>
+      <div className="absolute top-0 z-20 opacity-[0.03] left-0 w-full h-full">
+        <Image
+          src={ContourMountain}
+          alt="countout-mountain"
+          className="w-full h-full"
+        ></Image>
+      </div>
 
-      <div className="grid grid-cols-2 mt-[3rem] px-1 gap-10">
+      <div className="w-11/12 mx-auto grid grid-cols-2 mt-[3rem] px-1 gap-10 relative">
         {ServicesData.map((item, index) => (
           <div
             key={index}
-            className="w-full cursor-pointer p-10  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-3xl "
+            className="w-full cursor-pointer p-10 relative  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-3xl "
           >
             <div className="w-full justify-between flex items-center">
               <div className="flex flex-col gap-2">

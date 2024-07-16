@@ -17,7 +17,7 @@ export default function AboutHome({}: Props) {
       <div className="flex gap-10">
         {/* CARDS  */}
         <div className="grid w-full mx-auto grid-cols-4 gap-2">
-          <div className="flex items-start flex-col gap-2">
+          <div className="flex items-start justify-center flex-col gap-2">
             <h1 className="uppercase font-semibold text-3xl tracking-wider">
               Best sellers
             </h1>
@@ -65,7 +65,7 @@ export default function AboutHome({}: Props) {
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
               Alpine Trekking
-              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
                 View
               </button>
             </div>
@@ -85,7 +85,7 @@ export default function AboutHome({}: Props) {
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
               Alpine Trekking
-              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
                 View
               </button>
             </div>
@@ -105,7 +105,7 @@ export default function AboutHome({}: Props) {
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
               Alpine Trekking
-              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
                 View
               </button>
             </div>
@@ -126,7 +126,7 @@ export default function AboutHome({}: Props) {
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
               Alpine Trekking
-              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
                 View
               </button>
             </div>
@@ -146,7 +146,7 @@ export default function AboutHome({}: Props) {
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
               Alpine Trekking
-              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
                 View
               </button>
             </div>
@@ -166,7 +166,7 @@ export default function AboutHome({}: Props) {
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
               Alpine Trekking
-              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
                 View
               </button>
             </div>
@@ -186,7 +186,7 @@ export default function AboutHome({}: Props) {
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
               Alpine Trekking
-              <button className="mt-3 bg-yellow-500 text-sm px-10 py-2 rounded-3xl">
+              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
                 View
               </button>
             </div>

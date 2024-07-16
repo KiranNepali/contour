@@ -70,7 +70,7 @@ function Navbar({}: Props) {
     <>
       <div
         ref={navContainerRef}
-        className={`fixed z-[100] nav-container bg-yellow-50  text-secondary-500 top-0  left-0 w-full h-[4rem] `}
+        className={`fixed z-[100] nav-container bg-[#FFFBEB]  text-secondary-500 top-0  left-0 w-full h-[4rem] `}
       >
         {/* mobile nav  */}
         {/* <div
@@ -141,7 +141,7 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex   duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex   duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
                 <div className="flex flex-col">
                   {expeditionsLink.map((trek) => (
                     <div key={trek.href} className="py-1 flex flex-col">
@@ -211,7 +211,7 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
                 <div className="flex flex-col">
                   {treksLink.map((trek) => (
                     <div key={trek.href} className="py-1 flex flex-col">
@@ -282,7 +282,7 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
                 <div className="flex flex-col">
                   {activitiesLink.map((activity) => (
                     <div key={activity.href} className="py-1 flex flex-col">
@@ -353,7 +353,7 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-yellow-50 rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw]    shadow p-5">
+              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw]    shadow p-5">
                 <div className="flex flex-col w-[20%]">
                   {trainingLink.map((training) => (
                     <div key={training.href} className="py-1 flex flex-col">
@@ -448,7 +448,7 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <ul className="absolute hidden bg-yellow-50 rounded-3xl group-hover:block duration-[0.5] top-[100%] left-0  whitespace-nowrap   shadow p-5">
+              <ul className="absolute hidden bg-[#FFFBEB] rounded-3xl group-hover:block duration-[0.5] top-[100%] left-0  whitespace-nowrap   shadow p-5">
                 {companyLinks.map((link) => (
                   <li key={link.href} className="py-1">
                     <Link href={link.href}>

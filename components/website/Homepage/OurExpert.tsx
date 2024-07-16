@@ -9,9 +9,13 @@ export default function OurExpert({}: Props) {
   return (
     <div className="w-full mb-[5rem]">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl uppercase w-full tracking-wider flex justify-center items-start text-secondary-500 text-center  font-bold">
-          Our Experts
-        </h1>
+        {/* title  */}
+        <div className="w-auto flex-col flex gap-2 justify-center items-center">
+          <h1 className="text-3xl uppercase text-secondary-500 text-center  font-bold">
+            Our Experts
+          </h1>
+          <hr className="bg-yellow-500 h-[2px] overflow-hidden w-[10%] rounded-full" />
+        </div>
         <p className="text-center w-[50%] mx-auto text-zinc-700 leading-relaxed">
           Meet the folks behind the scenes, experts in making your adventure
           dreams come true with their skills and passion.

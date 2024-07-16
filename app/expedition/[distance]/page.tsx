@@ -10,7 +10,7 @@ function Page({ params }: any) {
     scrollTo(0, 0);
   },[]);
   return (
-    <main className=" z-[20] relative mb-[60vh] bg-yellow-50">
+    <main className=" z-[20]  bg-[#FFFBEB]">
       <AllExpMain distance={distance} />
     </main>
   );

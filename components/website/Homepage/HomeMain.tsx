@@ -25,7 +25,7 @@ function HomeMain({}: any) {
           <div className="w-11/12 mx-auto">
             <HomeAbout />
           </div>
-          <div className="w-11/12 mx-auto">
+          <div className="w-full mx-auto">
             <ServicesHome />
           </div>
           <div className="w-11/12 mx-auto">

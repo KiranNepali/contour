@@ -7,7 +7,6 @@ type Props = {};
 export default function BlogMain({}: Props) {
   return (
     <div className="w-full">
-      
       <BlogHero />
       <Blogs />
     </div>

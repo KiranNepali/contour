@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Ceo from "@/public/team/CEO.jpg";
-
+import { Icon } from "@iconify/react";
 type Props = {};
 
 export default function MesssageFromCeo({}: Props) {
@@ -13,12 +13,24 @@ export default function MesssageFromCeo({}: Props) {
           alt="ceo-image"
           className="w-[30%] h-[50vh] object-cover object-center"
         ></Image>
-        <h1
-          className="text-3xl
+        <div className="flex w-[30%] flex-col">
+          <h1
+            className="text-3xl
       font-semibold uppercase"
-        >
-          Message from Ceo
-        </h1>
+          >
+            Message from Ceo
+          </h1>
+          <div className="flex flex-col gap-2">
+            <div className="flex justify-start">
+              <Icon icon="simple-icons:comma" className="w-[3rem] text-yellow-500 rotate-180  h-[3rem]" />
+              <Icon
+                icon="simple-icons:comma"
+                className="w-[3rem] text-yellow-500 rotate-180  -ml-3 h-[3rem]"
+              />
+            </div>
+            <p className="text-zinc-700 text-sm">“Guided Adventure with the Professional”</p>
+          </div>
+        </div>
       </div>
 
       <p className="text-zinc-700 leading-relaxed">

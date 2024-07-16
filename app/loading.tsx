@@ -6,12 +6,12 @@ type Props = {};
 
 export default function Loading({}: Props) {
   return (
-    <div className="w-full h-screen bg-yellow-50 relative z-[20] flex  justify-center items-center">
+    <div className="w-full h-screen bg-[#FFFBEB] relative z-[20] flex  justify-center items-center">
       <div className="">
         <Image
           src={LogoIcon}
           alt="trek-nepal-logo-icon"
-          className="logo-icon w-[3rem] h-[3rem] object-cover object-center"
+          className="logo-icon w-[8rem] object-cover object-center"
         ></Image>
       </div>
     </div>

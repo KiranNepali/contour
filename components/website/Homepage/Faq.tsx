@@ -31,9 +31,14 @@ export default function Faq({}: Props) {
     <div className="w-full rounded-3xl  mb-[5rem]">
       {/* top title  */}
       <div className="flex w-full justify-center items-center text-center flex-col gap-3">
-        <h1 className="text-3xl tracking-wider  font-bold text-secondary-500">
-          FREQUENTLY ASKED QUESTIONS
-        </h1>
+        {/* title  */}
+        <div className="w-auto flex-col flex gap-2 justify-center items-center">
+          <h1 className="text-3xl uppercase text-secondary-500 text-center  font-bold">
+            FREQUENTLY ASKED QUESTIONS
+          </h1>
+          <hr className="bg-yellow-500 h-[2px] overflow-hidden w-[50%] rounded-full" />
+        </div>
+
         <p className="w-full md:w-[50%] text-secondary-300">
           {`Got a question? We're here to help! If you don't see your question
           below, drop us a line on our`}{" "}
