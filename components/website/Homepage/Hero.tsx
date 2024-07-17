@@ -22,7 +22,6 @@ export default function Hero({}: Props) {
       scale: "1.2",
       duration: 2,
       scrollTrigger: {
-        // markers: true,
         start: "30% top",
         end: "bottom top",
         trigger: heroBgImgRef.current,
@@ -45,7 +44,10 @@ export default function Hero({}: Props) {
       <div className="flex flex-col w-full gap-10">
         <div className="text-center z-10  relative  text-white   mx-auto flex justify-center items-center flex-col gap-2">
           <h1 className="text-6xl  uppercase 3xl:text-7xl   font-extrabold">
-            Guided Adventure <br /> with <span className="bg-white text-transparent bg-clip-text">Professionals</span>
+            Guided Adventure <br /> with{" "}
+            <span className="bg-white text-transparent bg-clip-text">
+              Professionals
+            </span>
           </h1>
           <p className="text-sm text-white">
             A deeply personal experience at the heart of LeCrans
@@ -69,8 +71,7 @@ export default function Hero({}: Props) {
       <div className="absolute bottom-10 flex justify-center gap-10 left-[50%] translate-x-[-50%] z-10">
         <div className="flex  gap-3 justify-center items-center">
           <span className="flex gap-2 text-secondary-50 text-sm items-center">
-            Associated with{" "}
-            <span className="text-lg text-yellow-400">|</span>{" "}
+            Associated with <span className="text-lg text-yellow-400">|</span>{" "}
           </span>
           <div className="flex gap-1 justify-center items-center">
             <Image
