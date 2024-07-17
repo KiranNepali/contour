@@ -66,11 +66,11 @@ function TripDetailMain({}: Props) {
           {/* tab  link  */}
           <div className="mx-auto  w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[4rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
             <div className="w-full py-1 overflow-x-scroll md:overflow-x-visible flex md:flex-col gap-5 font-medium items-center">
-              {buttonLabels.map((item, index) => (
+              {buttonLabels.map((item) => (
                 <a
                   href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
                   key={item.id}
-                  className={`cursor-pointer text-nowrap w-full text-secondary-500 border-x border-b hover:scale-105 rounded-3xl duration-300  flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
+                  className={`cursor-pointer text-sm text-nowrap w-full text-zinc-800 hover:bg-yellow-400 border-x border-b hover:scale-105 rounded-3xl duration-300  flex justify-center items-center  px-5  h-[2.5rem] `}
                 >
                   {item.label}
                 </a>
@@ -79,7 +79,7 @@ function TripDetailMain({}: Props) {
 
             <Link
               href="/booking"
-              className={`cursor-pointer hiddenl bg-yellow-400   text-nowrap w-full text-white  0 rounded-3xl  duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
+              className={`cursor-pointer hiddenl bg-yellow-400   text-nowrap w-full text-white  0 rounded-3xl  duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] `}
             >
               Book now
             </Link>
@@ -87,24 +87,28 @@ function TripDetailMain({}: Props) {
           {/* detail  */}
 
           <div className="w-full md:w-[70%] flex flex-col gap-2">
+            {/* overvieew  */}
             <div
               id="overview"
-              className="w-full mx-auto p-3 md:p-10  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl overview relative tracking-wide title font-semibold italic text-secondary-500">
                 Overview
               </div>
-              <div className="w-full  text-secondary-400">
+              <div className="w-full leading-relaxed  text-zinc-700">
                 {`Mount Lhotse is one of the world's tallest mountains, with its
                 summit reaching 8,516 meters (27,940 feet) above sea level. Its
                 high altitude presents significant challenges to climbers due to
                 decreased oxygen levels and extreme weather conditions.`}
               </div>
+              <button className="font-medium mt-3 italic underline">
+                Read more
+              </button>
             </div>
             {/* iternary  */}
             <div
               id="itinerary"
-              className="w-full mx-auto p-3 md:p-10  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               {/* tile  */}
               <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
@@ -113,162 +117,86 @@ function TripDetailMain({}: Props) {
               <div className="w-full h-full flex flex-col gap-2">
                 {ItineraryData.map((item, index) => (
                   <div
+                    onClick={() => toggleOpen(index)}
                     key={index}
-                    className="w-full  py-4 md:py-2  overflow-hidden    items-center flex flex-col justify-between px-3 md:px-10"
+                    className="w-full cursor-pointer  rounded-3xl shadow-[rgba(17,_17,_26,_0.1)_0px_0px_5px]  py-4 md:py-2  overflow-hidden    items-center flex flex-col justify-between px-3 md:px-10"
                   >
                     <div className="w-full h-[4rem] flex  justify-between items-center">
                       <div className="flex gap-10 items-center">
                         {/* day */}
-                        <div className="font-bold justify-center items-center w-[3rem] leading-none h-[3rem] rounded-full overflow-hidden  text-primary-400  border-primary-300 border   text-[12px] flex flex-col gap-1">
+                        <div className="font-semibold justify-center items-center w-[3rem] leading-none h-[3rem] rounded-full overflow-hidden  text-white bg-yellow-400     text-[12px] flex flex-col gap-1">
                           <span>Day</span>
                           <span>{item.day}</span>
                         </div>
                         {/* title */}
-                        <span className="text-sm font-medium">
+                        <span className=" font-medium text-zinc-800">
                           {item.title}
                         </span>
                       </div>
                       {/* open */}
-                      <div
-                        onClick={() => toggleOpen(index)}
-                        className="relative w-[3rem] h-[3rem]   overflow-hidden cursor-pointer"
-                      >
-                        <span className="absolute toggle1 bg-zinc-50 h-[2px] top-[50%] w-[15px] left-[50%] -translate-x-[50%] inline-block"></span>
+                      <div className="relative w-[3rem] h-[3rem]  overflow-hidden cursor-pointer">
+                        <span className="absolute toggle1 bg-yellow-500 h-[2px] top-[50%] w-[15px] left-[50%] -translate-x-[50%] inline-block"></span>
                         <span
-                          className={`absolute toggle2-${index} bg-zinc-50 h-[2px] top-[50%] rotate-90 w-[15px] left-[50%] -translate-x-[50%] inline-block`}
+                          className={`absolute toggle2-${index} bg-yellow-500 h-[2px] top-[50%] rotate-90 w-[15px] left-[50%] -translate-x-[50%] inline-block`}
                         ></span>
                       </div>
                     </div>
 
                     {/* desc  */}
                     <div
-                      className={`open-desc-${index} w-full border-t border-zinc-700 h-0 text-sm flex justify-start text-secondary-400 items-center  opacity-0`}
+                      className={`open-desc-${index} w-full   h-0  flex justify-start text-zinc-700 items-center  opacity-0`}
                     >
-                      <span className="">{item.desc}</span>
+                      <p className="leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* MAJOR TRIP INFODRMATION  */}
             <div
-              id="route-map"
-              className="w-full h-[70vh] mx-auto p-3 md:p-10  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              id="trip-attraction"
+              className="w-full h-[70vh] mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl route-map relative tracking-wide title font-semibold italic text-secondary-500">
-                Route Map
+                Major Trip Attraction
               </div>
-              <Image
+              {/* <Image
                 width={1000}
                 height={1000}
                 src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="overflow-hidded w-full h-full object-cover object-center"
                 alt=""
-              />
-            </div>
-            <div
-              id="inclusions"
-              className="w-full mx-auto p-3 md:p-10  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
-            >
-              <div className="text-2xl relative inclusion tracking-wide title font-semibold italic text-secondary-500">
-                Inclusion
-              </div>
-              <div className="w-full h-full flex flex-col gap-2">
-                {Inclusion.map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-full  py-4 md:py-2  overflow-hidden   flex justify-center items-center  px-3 md:px-10"
-                  >
-                    <div className=" w-full flex justify-start gap-5 items-center">
-                      {/* day */}
-                      <div className="font-bold justify-center items-center min-w-[3rem] p-3 leading-none min-h-[3rem] rounded-full overflow-hidden ">
-                        <Icon
-                          icon="subway:tick"
-                          className="text-blue-600 w-full h-full object-cover object-center"
-                        />
-                      </div>
-                      {/* title */}
-                      <div className="font-medium text-[15px]">
-                        <span className="font-semibold">{item.title}:</span>{" "}
-                        <span className="text-secondary-400">
-                          {item.description}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+              /> */}
+
+              <div className="flex flex-col gap-2 mt-1">
+                {TripAttraction.map((item, index) => (
+                  <p key={index} className=" text-zinc-700 leading-relaxed">
+                    {item.title}
+                  </p>
                 ))}
               </div>
             </div>
+            {/* essectial indormatrion  */}
             <div
-              id="exclusions"
-              className="w-full mx-auto p-3 md:p-10  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              id="essential-information"
+              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
-              <div className="text-2xl exclusion relative tracking-wide title font-semibold italic text-secondary-500">
-                Exclusions
+              {/* tile  */}
+              <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
+                Essential Information
               </div>
               <div className="w-full h-full flex flex-col gap-2">
-                {Exclusion.map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-full  py-4 md:py-2  overflow-hidden   flex justify-center items-center  px-3 md:px-10"
-                  >
-                    <div className=" w-full flex justify-start gap-5 items-center">
-                      {/* day */}
-                      <div className="font-bold justify-center items-center min-w-[3rem] p-3 leading-none min-h-[3rem] rounded-full overflow-hidden ">
-                        <Icon
-                          icon="fluent-emoji-flat:cross-mark"
-                          className="text-blue-600 w-full h-full object-cover object-center"
-                        />
-                      </div>
-                      {/* title */}
-                      <div className="font-medium text-[15px]">
-                        <span className="font-semibold">{item.title}:</span>{" "}
-                        <span className="text-secondary-400">
-                          {item.description}
-                        </span>
-                      </div>
-                    </div>
+                {EssentialInformation.map((item) => (
+                  <div key={item.id} className="flex mt-2 flex-col">
+                    <h2 className="text-lg font-medium text-zinc-800">
+                      {item.title} :
+                    </h2>
+                    <p className="leading-relaxed  text-[16px] text-zinc-700">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div
-              id="fixed-dates"
-              className="w-full mx-auto p-3 md:p-10  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
-            >
-              <div className="text-2xl relative fixed-date tracking-wide title font-semibold italic text-secondary-500">
-                Fixed Dates
-              </div>
-              <div className="w-full h-full flex flex-col gap-2">
-                <div className="w-full  py-5  overflow-hidden   items-center flex flex-col justify-between px-3 md:px-10">
-                  {/* table  */}
-                  <table className="w-full">
-                    <tr className="border-b border-primary-400 h-[3rem] text-sm whitespace-nowrap md:text-base text-left">
-                      <th>Date</th>
-                      <th>Days</th>
-                      <th>Status</th>
-                      <th>Group Size</th>
-                    </tr>
-                    <tr className="border-b h-[10rem] md:h-20 border-primary-400 text-secondary-400 text-sm">
-                      <td>
-                        <div>
-                          <span className="font-semibold text-secondary-500">
-                            Start:{" "}
-                          </span>
-                          2024-09-01
-                        </div>
-                        <div>
-                          <span className="font-semibold text-secondary-500">
-                            End:{" "}
-                          </span>
-                          2024-09-07
-                        </div>
-                      </td>
-                      <td>45 days</td>
-                      <td>Booking Open</td>
-                      <td>2 - 16 PAX</td>
-                    </tr>
-                  </table>
-                </div>
               </div>
             </div>
           </div>
@@ -277,7 +205,7 @@ function TripDetailMain({}: Props) {
           <div className="mx-auto  w-full md:w-[15%] flex-col gap-8  sticky top-[4rem] overflow-x-scroll md:overflow-x-visible bg-yellow-400 rounded-3xl md:top-[6rem] left-0  flex   items-center">
             <div className="flex w-full  flex-col gap-2 py-5 0 px-3 h-[20vh] rounded-3xl">
               <span className="font-semibold">USD</span>
-              <span className="text-sm text-white font-medium">
+              <span className=" text-white font-medium">
                 From $17500 / person
               </span>
             </div>
@@ -293,10 +221,9 @@ export default TripDetailMain;
 const buttonLabels = [
   { id: 1, label: "Overview" },
   { id: 2, label: "Itinerary" },
-  { id: 3, label: "Route map" },
-  { id: 4, label: "Inclusions" },
-  { id: 5, label: "Exclusions" },
-  { id: 6, label: "Fixed Dates" },
+  { id: 3, label: "Trip Attraction" },
+  { id: 4, label: "Essential Information" },
+  { id: 5, label: "Gear List" },
 ];
 
 const ItineraryData = [
@@ -327,292 +254,433 @@ const ItineraryData = [
   },
 ];
 
-const Inclusion = [
+//
+
+const TripAttraction = [
   {
     id: 1,
-    title: "Arrival and Departure",
-    description:
-      "Private vehicle transportation from the airport to the hotel and back.",
+    title: `1:1 Ratio (1 Certified Mountain Guide and 1 Climber)`,
   },
   {
     id: 2,
-    title: "Kathmandu Hotel Accommodation",
-    description:
-      "Four nights in a 4-star hotel in Kathmandu, with a single room and a bed and breakfast package.",
+    title: `Professional and experienced Guides and Support Guides`,
   },
   {
     id: 3,
-    title: "Greetings for Dinner",
-    description:
-      "A welcome dinner at a typical tourist restaurant in Kathmandu with the office staff.",
+    title: `Challenging High alpine climbing experience above 8000m ASL`,
   },
   {
     id: 4,
-    title: "Customs Clearance",
-    description:
-      "Support for cargo clearance at Nepalese Customs, with charges applicable for the clearance service.",
+    title: `It serves as a perfect training preparation before attempting a serious technical other 8,000m mountains including Mount Everest 8848.86m`,
   },
   {
     id: 5,
-    title: "Permits",
-    description:
-      "Royalty for mountaineering expeditions and a permit fee imposed by the Nepalese government for climbing Mount Manaslu, and accessing conservation area.",
+    title: `Group Climbing Gears`,
   },
   {
     id: 6,
-    title: "Representative Officer",
-    description:
-      "One government liaison officer provided with complete equipment, salary, and accommodation.",
+    title: `Full Base camp Set up at Above Camps`,
   },
   {
     id: 7,
-    title: "Waste Management",
-    description:
-      "Fees for the transfer of human waste shipments and depositing garbage.",
+    title: `Specialized Alpine Cuisine in Trekking and Base camp`,
   },
   {
     id: 8,
-    title: "Insurance",
-    description:
-      "Insurance coverage for medical expenses and emergency rescue services for all Nepalese staff involved in the trek and expedition.",
+    title: `3 Oxygen cylinders for each climber and 1 set Mask and regulator)`,
   },
   {
     id: 9,
-    title: "Map",
-    description: "Map for Trekking and Climbing",
+    title: `Mask, Regulator, and O2 Cylinder (only for medical purposes at base camp)`,
   },
   {
     id: 10,
-    title: "Large Travel Bag",
-    description: "A large bag provided by Epeak Expedition",
-  },
-  {
-    id: 11,
-    title: "Member Transportation Services",
-    description:
-      "Travel by road from Kathmandu to Dharapani via Besishashar, and on the return journey, go from Machha Khola back to Kathmandu, following the outlined itinerary.",
-  },
-  {
-    id: 12,
-    title: "Transportation of Expedition Equipment",
-    description:
-      "Transportation of essential equipment for all members and staff will be provided from Kathmandu to Arukhet via jeep, from Arukhet to Sama Gaun via helicopter, and then to the base camp by porters. On the return journey, transportation will be arranged from the base camp to Sama Gaun by porters, from Sama Gaun to Arukhet by helicopter, and from Arughat back to Kathmandu via jeep.",
-  },
-  {
-    id: 13,
-    title: "Personal Belongings Allowance",
-    description:
-      "Each member is allowed up to 70 kg of personal baggage during the trek, which will be carried by porters or yaks.",
-  },
-  {
-    id: 14,
-    title: "Meal and Accommodation Provision",
-    description:
-      "Three meals a day (breakfast, lunch, and dinner) along with tea, coffee, and accessible accommodation at hotels/lodges during the trek and at the Base Camp. Hygienic and fresh food items such as vegetables, meat, fruits, soft drinks, and juice will be regularly served throughout the expedition, with the help of helicopter flights. Well-managed base camp setup for members and staff.",
-  },
-  {
-    id: 15,
-    title: "Baggage Carrier Service",
-    description:
-      "Porters will be provided per member for transportation to and from the base camp.",
-  },
-  {
-    id: 16,
-    title: "Camp Support Team",
-    description:
-      "Experienced and well-trained base camp cook and kitchen helpers as required.",
-  },
-  {
-    id: 17,
-    title: "Employee Compensation Package",
-    description:
-      "Daily wages, salary, equipment, food, and clothing for all Nepalese staff and porters.",
-  },
-  {
-    id: 18,
-    title: "Base Camp Tent",
-    description:
-      "Each member will have an individual box tent at the Base Camp.",
-  },
-  {
-    id: 19,
-    title: "Base Camp Infrastructure Supplies",
-    description:
-      "Necessary tents, mattresses, pillows, dining tent, kitchen tent, communication tent, toilet and shower tent, staff tents, cooking gear, tables, and chairs.",
-  },
-  {
-    id: 20,
-    title: "Heater",
-    description:
-      "Heaters will be provided at the base camp in dining and other necessary camps.",
-  },
-  {
-    id: 21,
-    title: "Light/Solar/Generator",
-    description:
-      "Solar panel and generator for lighting, battery charging, and electronic devices at the base camp.",
-  },
-  {
-    id: 22,
-    title: "Health Assessment Services",
-    description:
-      "Twice medical checkups for each climber at the base camp before the summit attempt.",
-  },
-  {
-    id: 23,
-    title: "Training",
-    description:
-      "Training sessions on oxygen use, mask regulator, ice wall, and ladder at the base camp by UIAGM Guides.",
-  },
-  {
-    id: 24,
-    title: "Expert Climbing Guide Assistance: Supportive Aid",
-    description:
-      "One veteran and government-licensed climbing Sherpa per member throughout the climb, including rotations and summit attempts.",
-  },
-  {
-    id: 25,
-    title: "Guide Compensation Package",
-    description:
-      "Salary, equipment, food, and clothing for climbing Sherpas. Bonus: Carry bonus for Sherpas and route fixing charges.",
-  },
-  {
-    id: 26,
-    title: "Oxygen Supply",
-    description:
-      "Epeak oxygen cylinders provided (5 bottles for each member, 3 bottles for each high-altitude Sherpa).",
-  },
-  {
-    id: 27,
-    title: "Breathing Equipment",
-    description:
-      "Epeak oxygen masks and regulators for each member and high-altitude Sherpa.",
-  },
-  {
-    id: 28,
-    title: "Emergency Oxygen Reserves",
-    description:
-      "Reserve oxygen cylinder, mask, and regulator with appropriate charge.",
-  },
-  {
-    id: 29,
-    title: "Advanced Camp Facilities",
-    description:
-      "Tents, cooking equipment, food, and climbing gear at high camps.",
-  },
-  {
-    id: 30,
-    title: "High Camp Dining Services",
-    description: "Kitchen and dining tents at Camp I and Camp II.",
-  },
-  {
-    id: 31,
-    title: "High Altitude Tent",
-    description: "Members will share tents in high camps.",
-  },
-  {
-    id: 32,
-    title: "Route Setting Crew",
-    description: "Experienced Sherpas will fix the route to the summit.",
-  },
-  {
-    id: 33,
-    title: "Satellite Phone",
-    description:
-      "Emergency satellite phone carried by Sherpas, available for members with charge.",
-  },
-  {
-    id: 34,
-    title: "Walkie-Talkie",
-    description:
-      "Communication devices from Base Camp to Mountain and vice versa.",
-  },
-  {
-    id: 35,
-    title: "Authorization Documents",
-    description:
-      "Satellite phone and walkie-talkie permits for all members and staff.",
-  },
-  {
-    id: 36,
-    title: "Internet Facility",
-    description: "Internet facility available at Base Camp with charge.",
-  },
-  {
-    id: 37,
-    title: "Weather Forecast",
-    description:
-      "Regular weather forecast reports from Meteotest, Bern (Switzerland).",
-  },
-  {
-    id: 38,
-    title: "Health Supplies",
-    description: "Comprehensive medical kit for members and staff.",
-  },
-  {
-    id: 39,
-    title: "Certificate",
-    description:
-      "Mount Manaslu climbing certificate issued by MoCTCA after a successful climb.",
+    title: `Updated Weather Forecasting Report`,
   },
 ];
 
-const Exclusion = [
+const EssentialInformation = [
   {
     id: 1,
-    title: "International Flight Airfare",
-    description: "Air Travel Expenses to and from Kathmandu",
+    title: `Risk and Liability:`,
+    desc: `Contour Expeditions(P) Ltd will make every effort to ensure that your Expedition is smooth and as pleasant as possible. However, please be reminded that all programs in Nepal are strictly conducted under the rules and regulations of the Nepal Government and Tourism Bureau. Therefore, we Contour Expeditions(P) Ltd. shall not be responsible for any changes in the itinerary due to unavoidable circumstances to Government
+restrictions, landslides, road blockages, flooding, snowfall, political disturbances, illnesses or accidents. Any additional costs that are a result of such circumstances will be borne by you at the very spot.`,
   },
+
   {
     id: 2,
-    title: "Nepal Entry Visa Fee",
-    description:
-      "Charge for Nepalese Visa, priced at $125 USD for a duration of 90 days.",
+    title: `Medical Examination`,
+    desc: `Expedition members should have all the immunizations that are required for visiting Nepal and be free of any medical condition that might pose a risk to themselves or fellow climbers during the trip. Our Peak climbing guides team Our group of IFMGA guide and assistants Climbing sherpa are enthusiastic, motivated and regarded as the
+
+strongest and most cohesive group of Sherpas and other ethnic groups in Nepal. It is indicative of the reputation that our expedition team has earned - that Sherpa from other expeditions enthusiastically pursue a future position with the Contour Expeditions team.`,
   },
+
   {
     id: 3,
-    title: "Meal Provision",
-    description:
-      "Lunch and Dinner arrangements while in Kathmandu, including instances of early return from Trekking or Expedition as per the scheduled itinerary.",
+    title: `Documentation and Photographs`,
+    desc: `Expedition trek members will need to provide 4 Photos passport size, occupation, Home address for trekking and climbing permits and a copy of their passport bio-data page. Passport photocopy (should be very clear with color scan) and validity minimum 6 months. We recommend having your passport ready well in advance to avoid last moment visa procedures Kindly consult your doctor and get yourself examined.
+
+As trekking is situated at high altitudes please start exercises like walking, jogging, yoga, cardio, climbing and other breathing exercises in order to have a successful Trek and alpine climbing. Kindly get yourself medical insurance for this Trek. Please make sure you cover yourself for emergency evacuation (helicopter) insurance.`,
   },
+
   {
     id: 4,
-    title: "Extended Stay in Kathmandu",
-    description:
-      "Additional accommodation nights in Kathmandu. Applicable in instances of early arrival, late departure, early return from Trekking or Expedition, or domestic flight cancellation beyond the scheduled itinerary.",
+    title: `Deposit`,
+    desc: `An initial deposit of USD $1000 /-per person is required to secure a place on the trip`,
   },
+
   {
     id: 5,
-    title: "Insurance Coverage",
-    description:
-      "Policy encompassing medical expenses and high-altitude evacuation costs, including trip cancellation, interruption, high-altitude rescue, air evacuation, medical treatment, repatriation, etc. *Compulsory",
+    title: `Balance and Payments :`,
+    desc: `The payment balance for this trip is 30 days before departure. All payments should be made by bank wire transfer to the following bank and account:`,
   },
+
   {
     id: 6,
-    title: "Individual Expenditures",
-    description:
-      "Costs for telephone calls, internet usage, toiletries, battery recharge, hot showers, laundry services, soft drinks, beers, and any alcoholic beverages. (*Note: Soft drinks will be available for members at the base camp).",
+    title: `SAFETY for this trek:`,
+    desc: `Your safety is our major concern. So, the first aid kit boxes are supplied along the trek. The guides will take care of you if minor problems occur. But in case of harsh situations, emergency evacuation, and rescue, choppers with an experienced team will be there for you.`,
   },
+
   {
     id: 7,
-    title: "Personal Climbing Gear",
-    description:
-      "Includes clothing, packing items, bags, personal medical kit, and all types of personal trekking and climbing equipment.",
+    title: `BEST TIME TO DO`,
+    desc: `The best time for this trek is during the spring (March to May) and autumn (October to December) season.`,
   },
+
   {
     id: 8,
-    title: "Toiletries",
-    description:
-      "Essential items such as soaps, shampoos, toilet paper, tissue paper, toothpaste, and other products used for personal hygiene and cleanliness.",
+    title: `TRAVEL INSURANCE`,
+    desc: `It is your responsibility to ensure that you are fully and adequately insured for the duration of your trip. Please ensure that all activities, excursions, and destinations in your itinerary are included in your insurance policy, We advise our climbers to have full insurance against Medical, Evacuation, Trip cancellation, lost or damaged baggage, Air delays, etc. for this peak, you must be covered up to 6200m altitude.  Please take a copy of your insurance policy to the pre-trip briefing, as the guide will need to collect
+
+your insurance details. We also ask that you keep a copy of your policy summary (containing policy number and emergency contact number for you insure) in your daypack at all times, so that we can access the information should we need to contact the insured on your behalf. We recommend international insurance company is https://www.globalrescue.com`,
   },
   {
     id: 9,
-    title: "Filming Permit",
-    description: "Fee for special filming, camera, and drone usage permit.",
+    title: `MEAL DURING TREK and Manaslu Expedition`,
+    desc: `During our trek, you can appreciate bona fide Nepalese nourishment also the more typical international food (Tibetan, Continental, Italian, Indian, and so forth.). The essential menu for nourishment includes local food. You might not have more choices for nourishment, yet whatever you eat is healthy. The sustenance menu has
+
+dal, Bhat, tarkari, momo (dumplings) and noodles on top. Breakfast and meals will be given from the teahouse or from a hotel menu where we go through the night; however lunch will be given while in transit to the next destination. All suppers, including breakfast, lunch, and supper, will be given during trekking while just breakfast will be accessible in Kathmandu and Pokhara. There will likewise be welcome and goodbye meals. For beverages, you can pick anything from tea, espresso, as well as some flavored beverages.`,
   },
+
   {
     id: 10,
-    title: "Internet Service",
-    description: "Excluded during the trek.",
+    title: `ACCOMMODATION DURING TREK`,
+    desc: `At City: Kathmandu and Ramechhap
+
+Hotel (one room for two people)
+
+Note: if you need a single room, email us at info@contourexpeditions.com
+
+For the Single Room, we charge a single supplement.`,
+  },
+  {
+    id: 11,
+    title: `While Trekking and base camp:`,
+    desc: `Eco Lodges ( a small house with few rooms at remote areas) best camping tent at base camp full setup, and one sleeping Mera v25 model at Manaslu Expedition, sharing base 2 people at base camp.`,
+  },
+  {
+    id: 12,
+    title: `ELECTRICAL SOCKETS`,
+    desc: `There are 2 types of electrical sockets in Nepal –type D which are old UK style (3 round pins) and type C which are standard European style (2 round pins) –and are 220v, same as the UK. The type D socket is commonly found in India, so any adapter that is suitable for India will be the right size, and a European adaptor will be fine for the type C socket.`,
+  },
+  {
+    id: 13,
+    title: `Is there a mobile network on this trek? Are there any electricity charging points on this trek?`,
+    desc: `Network on Ncell and Namaste Nepal telecom is available along the trek. Major tea houses have the facility to make calls for an additional charge. You can buy Wi-Fi at all tea houses for 200-300 NPR. Tea houses charge you 100-300 NPR for the use of electricity charging points. The rates increase as you go higher up on the trail. The dining area in tea houses at lower altitudes usually have common charging points that you can use for free.`,
+  },
+  {
+    id: 14,
+    title: `Toilets`,
+    desc: `Starting the Manaslu Expedition, you won’t find western style toilets in most hotels. It is always easier and cleaner to maintain squat toilets. Water is stored in drums. Since toilets are common for a floor, it can get dirty in peak seasons, when there’s a high flow of trekkers.`,
   },
 ];
+
+// const Exclusion = [
+//   {
+//     id: 1,
+//     title: "International Flight Airfare",
+//     description: "Air Travel Expenses to and from Kathmandu",
+//   },
+//   {
+//     id: 2,
+//     title: "Nepal Entry Visa Fee",
+//     description:
+//       "Charge for Nepalese Visa, priced at $125 USD for a duration of 90 days.",
+//   },
+//   {
+//     id: 3,
+//     title: "Meal Provision",
+//     description:
+//       "Lunch and Dinner arrangements while in Kathmandu, including instances of early return from Trekking or Expedition as per the scheduled itinerary.",
+//   },
+//   {
+//     id: 4,
+//     title: "Extended Stay in Kathmandu",
+//     description:
+//       "Additional accommodation nights in Kathmandu. Applicable in instances of early arrival, late departure, early return from Trekking or Expedition, or domestic flight cancellation beyond the scheduled itinerary.",
+//   },
+//   {
+//     id: 5,
+//     title: "Insurance Coverage",
+//     description:
+//       "Policy encompassing medical expenses and high-altitude evacuation costs, including trip cancellation, interruption, high-altitude rescue, air evacuation, medical treatment, repatriation, etc. *Compulsory",
+//   },
+//   {
+//     id: 6,
+//     title: "Individual Expenditures",
+//     description:
+//       "Costs for telephone calls, internet usage, toiletries, battery recharge, hot showers, laundry services, soft drinks, beers, and any alcoholic beverages. (*Note: Soft drinks will be available for members at the base camp).",
+//   },
+//   {
+//     id: 7,
+//     title: "Personal Climbing Gear",
+//     description:
+//       "Includes clothing, packing items, bags, personal medical kit, and all types of personal trekking and climbing equipment.",
+//   },
+//   {
+//     id: 8,
+//     title: "Toiletries",
+//     description:
+//       "Essential items such as soaps, shampoos, toilet paper, tissue paper, toothpaste, and other products used for personal hygiene and cleanliness.",
+//   },
+//   {
+//     id: 9,
+//     title: "Filming Permit",
+//     description: "Fee for special filming, camera, and drone usage permit.",
+//   },
+//   {
+//     id: 10,
+//     title: "Internet Service",
+//     description: "Excluded during the trek.",
+//   },
+// ];
+
+// const Inclusion = [
+//   {
+//     id: 1,
+//     title: "Arrival and Departure",
+//     description:
+//       "Private vehicle transportation from the airport to the hotel and back.",
+//   },
+//   {
+//     id: 2,
+//     title: "Kathmandu Hotel Accommodation",
+//     description:
+//       "Four nights in a 4-star hotel in Kathmandu, with a single room and a bed and breakfast package.",
+//   },
+//   {
+//     id: 3,
+//     title: "Greetings for Dinner",
+//     description:
+//       "A welcome dinner at a typical tourist restaurant in Kathmandu with the office staff.",
+//   },
+//   {
+//     id: 4,
+//     title: "Customs Clearance",
+//     description:
+//       "Support for cargo clearance at Nepalese Customs, with charges applicable for the clearance service.",
+//   },
+//   {
+//     id: 5,
+//     title: "Permits",
+//     description:
+//       "Royalty for mountaineering expeditions and a permit fee imposed by the Nepalese government for climbing Mount Manaslu, and accessing conservation area.",
+//   },
+//   {
+//     id: 6,
+//     title: "Representative Officer",
+//     description:
+//       "One government liaison officer provided with complete equipment, salary, and accommodation.",
+//   },
+//   {
+//     id: 7,
+//     title: "Waste Management",
+//     description:
+//       "Fees for the transfer of human waste shipments and depositing garbage.",
+//   },
+//   {
+//     id: 8,
+//     title: "Insurance",
+//     description:
+//       "Insurance coverage for medical expenses and emergency rescue services for all Nepalese staff involved in the trek and expedition.",
+//   },
+//   {
+//     id: 9,
+//     title: "Map",
+//     description: "Map for Trekking and Climbing",
+//   },
+//   {
+//     id: 10,
+//     title: "Large Travel Bag",
+//     description: "A large bag provided by Epeak Expedition",
+//   },
+//   {
+//     id: 11,
+//     title: "Member Transportation Services",
+//     description:
+//       "Travel by road from Kathmandu to Dharapani via Besishashar, and on the return journey, go from Machha Khola back to Kathmandu, following the outlined itinerary.",
+//   },
+//   {
+//     id: 12,
+//     title: "Transportation of Expedition Equipment",
+//     description:
+//       "Transportation of essential equipment for all members and staff will be provided from Kathmandu to Arukhet via jeep, from Arukhet to Sama Gaun via helicopter, and then to the base camp by porters. On the return journey, transportation will be arranged from the base camp to Sama Gaun by porters, from Sama Gaun to Arukhet by helicopter, and from Arughat back to Kathmandu via jeep.",
+//   },
+//   {
+//     id: 13,
+//     title: "Personal Belongings Allowance",
+//     description:
+//       "Each member is allowed up to 70 kg of personal baggage during the trek, which will be carried by porters or yaks.",
+//   },
+//   {
+//     id: 14,
+//     title: "Meal and Accommodation Provision",
+//     description:
+//       "Three meals a day (breakfast, lunch, and dinner) along with tea, coffee, and accessible accommodation at hotels/lodges during the trek and at the Base Camp. Hygienic and fresh food items such as vegetables, meat, fruits, soft drinks, and juice will be regularly served throughout the expedition, with the help of helicopter flights. Well-managed base camp setup for members and staff.",
+//   },
+//   {
+//     id: 15,
+//     title: "Baggage Carrier Service",
+//     description:
+//       "Porters will be provided per member for transportation to and from the base camp.",
+//   },
+//   {
+//     id: 16,
+//     title: "Camp Support Team",
+//     description:
+//       "Experienced and well-trained base camp cook and kitchen helpers as required.",
+//   },
+//   {
+//     id: 17,
+//     title: "Employee Compensation Package",
+//     description:
+//       "Daily wages, salary, equipment, food, and clothing for all Nepalese staff and porters.",
+//   },
+//   {
+//     id: 18,
+//     title: "Base Camp Tent",
+//     description:
+//       "Each member will have an individual box tent at the Base Camp.",
+//   },
+//   {
+//     id: 19,
+//     title: "Base Camp Infrastructure Supplies",
+//     description:
+//       "Necessary tents, mattresses, pillows, dining tent, kitchen tent, communication tent, toilet and shower tent, staff tents, cooking gear, tables, and chairs.",
+//   },
+//   {
+//     id: 20,
+//     title: "Heater",
+//     description:
+//       "Heaters will be provided at the base camp in dining and other necessary camps.",
+//   },
+//   {
+//     id: 21,
+//     title: "Light/Solar/Generator",
+//     description:
+//       "Solar panel and generator for lighting, battery charging, and electronic devices at the base camp.",
+//   },
+//   {
+//     id: 22,
+//     title: "Health Assessment Services",
+//     description:
+//       "Twice medical checkups for each climber at the base camp before the summit attempt.",
+//   },
+//   {
+//     id: 23,
+//     title: "Training",
+//     description:
+//       "Training sessions on oxygen use, mask regulator, ice wall, and ladder at the base camp by UIAGM Guides.",
+//   },
+//   {
+//     id: 24,
+//     title: "Expert Climbing Guide Assistance: Supportive Aid",
+//     description:
+//       "One veteran and government-licensed climbing Sherpa per member throughout the climb, including rotations and summit attempts.",
+//   },
+//   {
+//     id: 25,
+//     title: "Guide Compensation Package",
+//     description:
+//       "Salary, equipment, food, and clothing for climbing Sherpas. Bonus: Carry bonus for Sherpas and route fixing charges.",
+//   },
+//   {
+//     id: 26,
+//     title: "Oxygen Supply",
+//     description:
+//       "Epeak oxygen cylinders provided (5 bottles for each member, 3 bottles for each high-altitude Sherpa).",
+//   },
+//   {
+//     id: 27,
+//     title: "Breathing Equipment",
+//     description:
+//       "Epeak oxygen masks and regulators for each member and high-altitude Sherpa.",
+//   },
+//   {
+//     id: 28,
+//     title: "Emergency Oxygen Reserves",
+//     description:
+//       "Reserve oxygen cylinder, mask, and regulator with appropriate charge.",
+//   },
+//   {
+//     id: 29,
+//     title: "Advanced Camp Facilities",
+//     description:
+//       "Tents, cooking equipment, food, and climbing gear at high camps.",
+//   },
+//   {
+//     id: 30,
+//     title: "High Camp Dining Services",
+//     description: "Kitchen and dining tents at Camp I and Camp II.",
+//   },
+//   {
+//     id: 31,
+//     title: "High Altitude Tent",
+//     description: "Members will share tents in high camps.",
+//   },
+//   {
+//     id: 32,
+//     title: "Route Setting Crew",
+//     description: "Experienced Sherpas will fix the route to the summit.",
+//   },
+//   {
+//     id: 33,
+//     title: "Satellite Phone",
+//     description:
+//       "Emergency satellite phone carried by Sherpas, available for members with charge.",
+//   },
+//   {
+//     id: 34,
+//     title: "Walkie-Talkie",
+//     description:
+//       "Communication devices from Base Camp to Mountain and vice versa.",
+//   },
+//   {
+//     id: 35,
+//     title: "Authorization Documents",
+//     description:
+//       "Satellite phone and walkie-talkie permits for all members and staff.",
+//   },
+//   {
+//     id: 36,
+//     title: "Internet Facility",
+//     description: "Internet facility available at Base Camp with charge.",
+//   },
+//   {
+//     id: 37,
+//     title: "Weather Forecast",
+//     description:
+//       "Regular weather forecast reports from Meteotest, Bern (Switzerland).",
+//   },
+//   {
+//     id: 38,
+//     title: "Health Supplies",
+//     description: "Comprehensive medical kit for members and staff.",
+//   },
+//   {
+//     id: 39,
+//     title: "Certificate",
+//     description:
+//       "Mount Manaslu climbing certificate issued by MoCTCA after a successful climb.",
+//   },
+// ];

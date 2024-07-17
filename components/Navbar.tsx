@@ -516,14 +516,11 @@ const activitiesLink = [
 ];
 
 const trainingLink = [
-  { name: "Basic Mountaineering course", href: "/other_activities/rafting" },
+  { name: "Basic Mountaineering course", href: "/training" },
   {
     name: "Preparation for 8000m peak climbing course",
-    href: "/other_activities/heli_tour",
+    href: "/training",
   },
-  // { name: "Paragliding", href: "/other_activities/paragliding" },
-  // { name: "Mountain Biking", href: "/other_activities/mountain_biking" },
-  // { name: "Rock Climbing", href: "/other_activities/rock_climbing" },
 ];
 
 const expeditionsLink = [

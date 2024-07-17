@@ -12,9 +12,9 @@ function AcitvityDetail({ activity }: any) {
   const data: any = OtherActivitiesData.find((obj) => obj.route == activity);
   const { gallery, desc, name, route } = data;
   return (
-    <div className="w-11/12 md:w-10/12 mx-auto py-[5rem] text-zinc-50 overflow-hidden">
+    <div className="w-11/12  mx-auto py-[3rem] text-zinc-50 overflow-hidden">
       {/* tab  */}
-      <div className="w-full py-1 overflow-x-scroll md:overflow-x-visible mb-9 flex justify-start  items-center gap-10">
+      <div className="w-full py-1 overflow-x-scroll md:overflow-x-visible mb-9 flex justify-start  items-center gap-5">
         {/* exp tab  */}
         {OtherActivitiesData.map((item, index) => (
           <Link
