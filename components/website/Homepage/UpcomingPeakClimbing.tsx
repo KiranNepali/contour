@@ -3,6 +3,13 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 // import ContourMap from "@/public/Contour-Map.svg";
+import BestSeller1 from "@/public/BestSellers/Best1.jpg";
+import BestSeller2 from "@/public/BestSellers/best2.webp";
+import BestSeller3 from "@/public/BestSellers/best3.jpg";
+import BestSeller4 from "@/public/BestSellers/best4.jpg";
+import BestSeller5 from "@/public/BestSellers/best2.jpg";
+import BestSeller6 from "@/public/BestSellers/best6.jpg";
+import BestSeller7 from "@/public/BestSellers/best7.jpg";
 type Props = {};
 
 export default function UpcomingPeakClimbing({}: Props) {
@@ -32,15 +39,15 @@ export default function UpcomingPeakClimbing({}: Props) {
             <Link key={index} href="trip/trip_detail">
               <div
                 key={index}
-                className="w-full cursor-pointer group hover:scale-95 duration-300  overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]"
+                className="w-full cursor-pointer group hover:scale-95 duration-300  overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
               >
                 <div className="absolute rounded-3xl top-0 left-0 w-full h-full bg-black opacity-[0.025]"></div>
-                <div className="rounded-b-3xl w-full h-[70%] overflow-hidden">
+                <div className="rounded-b-3xl w-full h-[45vh] overflow-hidden">
                   <Image
                     width={1000}
                     height={1000}
-                    src="https://images.unsplash.com/photo-1517934274943-d1749ff2d7a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
+                    src={item.src}
+                    alt="peak-climbing-img"
                     className="w-full h-full group-hover:scale-110 duration-300 group-hover:brightness-[0.8] brightness-[0.9] object-cover object-center "
                   ></Image>
                 </div>
@@ -61,7 +68,7 @@ export default function UpcomingPeakClimbing({}: Props) {
                     <h2 className="text-[16px] font-semibold text-secondary-400">
                       Package name
                     </h2>
-                    <span className="text-[14px] tracking-wider font-semibold text-yellow-400">
+                    <span className="text-[14px] tracking-wider font-semibold text-yellow-500">
                       $150
                     </span>
                   </div>
@@ -71,7 +78,10 @@ export default function UpcomingPeakClimbing({}: Props) {
                     Molestiae, excepturi?
                   </p>
                   {/* BUTTON  */}
-                  <Link href="/trip_detail" className="w-full flex justify-end">
+                  <Link
+                    href="/trip_detail"
+                    className="w-full flex justify-start"
+                  >
                     <button className="bg-yellow-200  text-center w-[100px] text-nowrap rounded-3xl h-10 relative font-sans text-zinc-800 text-xl font-semibold group">
                       <div className="bg-yellow-400 rounded-3xl h-8 w-1/3 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[92px] z-10 duration-500">
                         <svg
@@ -107,8 +117,8 @@ export default function UpcomingPeakClimbing({}: Props) {
 }
 
 const expeditions = [
-  { id: 1, name: "Arctic Adventure", date: "2024-08-01" },
-  { id: 2, name: "Desert Trek", date: "2024-09-15" },
-  { id: 3, name: "Mountain Climb", date: "2024-10-20" },
-  { id: 3, name: "Mountain Climb", date: "2024-10-20" },
+  { id: 1, name: "Arctic Adventure", date: "2024-08-01", src: BestSeller1 },
+  { id: 2, name: "Desert Trek", date: "2024-09-15", src: BestSeller2 },
+  { id: 3, name: "Mountain Climb", date: "2024-10-20", src: BestSeller3 },
+  { id: 3, name: "Mountain Climb", date: "2024-10-20", src: BestSeller4 },
 ];

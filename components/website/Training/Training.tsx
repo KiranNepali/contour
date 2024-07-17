@@ -73,7 +73,10 @@ export default function Training({}: Props) {
                   Molestiae, excepturi?
                 </p>
                 {/* BUTTON  */}
-                <Link href="/trip_detail" className="w-full flex justify-end">
+                <Link
+                  href="/trip/trip_detail"
+                  className="w-full flex justify-end"
+                >
                   <button className="bg-yellow-200  text-center w-[100px] text-nowrap rounded-3xl h-10 relative font-sans text-zinc-800 text-xl font-semibold group">
                     <div className="bg-yellow-400 rounded-3xl h-8 w-1/3 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[92px] z-10 duration-500">
                       <svg

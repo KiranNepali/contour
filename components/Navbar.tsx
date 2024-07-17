@@ -192,7 +192,37 @@ function Navbar({}: Props) {
                       </div>
                     </Link>
                   </div>
-                  <div className="">View all button</div>
+                  {/* BUTTON  */}
+                  <Link href="/">
+                    <div className="relative mt-4">
+                      <button className="bg-yellow-200 text-center w-[150px] rounded-3xl h-12 font-sans text-black text-xl font-semibold">
+                        <div className="bg-yellow-400 rounded-3xl h-10 w-10 z-30 flex items-center justify-center absolute left-1 top-[4px] duration-500 transition-all">
+                          <svg
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 1024 1024"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="rotate-180"
+                          >
+                            <path
+                              fill="#000000"
+                              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                            ></path>
+                            <path
+                              fill="#000000"
+                              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <p className="translate-x-3 text-sm">View all</p>
+                      </button>
+                      <style jsx>{`
+                        .relative:hover .absolute {
+                          width: 140px;
+                        }
+                      `}</style>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -262,7 +292,37 @@ function Navbar({}: Props) {
                       </div>
                     </Link>
                   </div>
-                  <div className="">View all button</div>
+                  {/* BUTTON  */}
+                  <Link href="/">
+                    <div className="relative mt-4">
+                      <button className="bg-yellow-200 text-center w-[150px] rounded-3xl h-12 font-sans text-black text-xl font-semibold">
+                        <div className="bg-yellow-400 rounded-3xl h-10 w-10 z-30 flex items-center justify-center absolute left-1 top-[4px] duration-500 transition-all">
+                          <svg
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 1024 1024"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="rotate-180"
+                          >
+                            <path
+                              fill="#000000"
+                              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                            ></path>
+                            <path
+                              fill="#000000"
+                              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <p className="translate-x-3 text-sm">View all</p>
+                      </button>
+                      <style jsx>{`
+                        .relative:hover .absolute {
+                          width: 140px;
+                        }
+                      `}</style>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -333,7 +393,37 @@ function Navbar({}: Props) {
                       </div>
                     </Link>
                   </div>
-                  <div className="">View all button</div>
+                  {/* BUTTON  */}
+                  <Link href="/">
+                    <div className="relative mt-4">
+                      <button className="bg-yellow-200 text-center w-[150px] rounded-3xl h-12 font-sans text-black text-xl font-semibold">
+                        <div className="bg-yellow-400 rounded-3xl h-10 w-10 z-30 flex items-center justify-center absolute left-1 top-[4px] duration-500 transition-all">
+                          <svg
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 1024 1024"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="rotate-180"
+                          >
+                            <path
+                              fill="#000000"
+                              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                            ></path>
+                            <path
+                              fill="#000000"
+                              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <p className="translate-x-3 text-sm">View all</p>
+                      </button>
+                      <style jsx>{`
+                        .relative:hover .absolute {
+                          width: 140px;
+                        }
+                      `}</style>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -367,10 +457,7 @@ function Navbar({}: Props) {
                 </div>
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
+                    <Link href="/training" onClick={() => setOpenNav(false)}>
                       <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
                         <Image
                           src={Package}
@@ -404,7 +491,37 @@ function Navbar({}: Props) {
                       </div>
                     </Link>
                   </div>
-                  <div className="">View all button</div>
+                  {/* BUTTON  */}
+                  <Link href="/">
+                    <div className="relative mt-4">
+                      <button className="bg-yellow-200 text-center w-[150px] rounded-3xl h-12 font-sans text-black text-xl font-semibold">
+                        <div className="bg-yellow-400 rounded-3xl h-10 w-10 z-30 flex items-center justify-center absolute left-1 top-[4px] duration-500 transition-all">
+                          <svg
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 1024 1024"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="rotate-180"
+                          >
+                            <path
+                              fill="#000000"
+                              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                            ></path>
+                            <path
+                              fill="#000000"
+                              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <p className="translate-x-3 text-sm">View all</p>
+                      </button>
+                      <style jsx>{`
+                        .relative:hover .absolute {
+                          width: 140px;
+                        }
+                      `}</style>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>

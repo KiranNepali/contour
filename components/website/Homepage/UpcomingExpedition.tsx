@@ -1,6 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import BestSeller1 from "@/public/BestSellers/Best1.jpg";
+import BestSeller2 from "@/public/BestSellers/best2.webp";
+import BestSeller3 from "@/public/BestSellers/best3.jpg";
+import BestSeller4 from "@/public/BestSellers/best4.jpg";
+import BestSeller5 from "@/public/BestSellers/best2.jpg";
+import BestSeller6 from "@/public/BestSellers/best6.jpg";
+import BestSeller7 from "@/public/BestSellers/best7.jpg";
 type Props = {};
 
 export default function UpcomingExpedition({}: Props) {
@@ -26,14 +33,14 @@ export default function UpcomingExpedition({}: Props) {
         <div className="grid w-full grid-cols-4 gap-4">
           {expeditions.map((item, index) => (
             <Link href="trip/trip_detail" key={index}>
-              <div className="w-full cursor-pointer group   hover:scale-95 duration-300 overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]">
+              <div className="w-full cursor-pointer group   hover:scale-95 duration-300 overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
                 <div className="absolute rounded-3xl top-0 left-0 w-full h-full bg-black opacity-[0.025]"></div>
-                <div className="rounded-b-3xl w-full h-[80%] overflow-hidden">
+                <div className="rounded-b-3xl w-full h-[45vh] overflow-hidden">
                   <Image
                     width={1000}
                     height={1000}
-                    src="https://images.unsplash.com/photo-1517934274943-d1749ff2d7a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
+                    src={item.src}
+                    alt="expedition-img"
                     className="w-full h-full group-hover:scale-110 duration-300 group-hover:brightness-[0.8] brightness-[0.9] object-cover object-center "
                   ></Image>
                 </div>
@@ -43,7 +50,7 @@ export default function UpcomingExpedition({}: Props) {
                   </span>
                 </div>
                 {/* title  */}
-                <div className="flex flex-col  px-5  pt-2">
+                <div className="flex flex-col  px-5  py-3">
                   <div className="">
                     <h2 className="text-[16px] font-semibold text-secondary-400">
                       {item.name}
@@ -91,8 +98,8 @@ export default function UpcomingExpedition({}: Props) {
 }
 
 const expeditions = [
-  { id: 1, name: "Arctic Adventure", date: "Start from April 05/2025" },
-  { id: 2, name: "Desert Trek", date: "Start from 2024" },
-  { id: 3, name: "Mountain Climb", date: "Start from 2024" },
-  { id: 3, name: "Mountain Climb", date: "Start from now" },
+  { id: 1, name: "Arctic Adventure", date: "2024-08-01", src: BestSeller1 },
+  { id: 2, name: "Desert Trek", date: "2024-09-15", src: BestSeller2 },
+  { id: 3, name: "Mountain Climb", date: "2024-10-20", src: BestSeller3 },
+  { id: 3, name: "Mountain Climb", date: "2024-10-20", src: BestSeller4 },
 ];

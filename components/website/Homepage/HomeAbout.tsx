@@ -65,19 +65,16 @@ export default function AboutHome({}: Props) {
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
             <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
               {/* name  */}
-              <span className="font-semibold text-lg">Everest Base Camp</span>
+              <span className="font-semibold text-xl ">Everest Base Camp</span>
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              Alpine Trekking
-              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
-                View
-              </button>
+              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
             </div>
             <Image
               src={BestSeller1}
               alt=""
-              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
+              className="w-full h-full object-cover object-center hover:brightness-50  cursor-pointer"
               width={1000}
               height={1000}
             />
@@ -85,19 +82,16 @@ export default function AboutHome({}: Props) {
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
             <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
               {/* name  */}
-              <span className="font-semibold text-lg">Everest Base Camp</span>
+              <span className="font-semibold text-xl ">Everest Base Camp</span>
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              Alpine Trekking
-              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
-                View
-              </button>
+              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
             </div>
             <Image
               src={BestSeller2}
               alt=""
-              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
+              className="w-full h-full object-cover object-center hover:brightness-50  cursor-pointer"
               width={1000}
               height={1000}
             />
@@ -105,19 +99,16 @@ export default function AboutHome({}: Props) {
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
             <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
               {/* name  */}
-              <span className="font-semibold text-lg">Everest Base Camp</span>
+              <span className="font-semibold text-xl ">Everest Base Camp</span>
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              Alpine Trekking
-              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
-                View
-              </button>
+              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
             </div>
             <Image
               src={BestSeller3}
               alt=""
-              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
+              className="w-full h-full object-cover object-center hover:brightness-50  cursor-pointer"
               width={1000}
               height={1000}
             />
@@ -126,19 +117,16 @@ export default function AboutHome({}: Props) {
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
             <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
               {/* name  */}
-              <span className="font-semibold text-lg">Everest Base Camp</span>
+              <span className="font-semibold text-xl ">Everest Base Camp</span>
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              Alpine Trekking
-              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
-                View
-              </button>
+              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
             </div>
             <Image
               src={BestSeller4}
               alt=""
-              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
+              className="w-full h-full object-cover object-center hover:brightness-50  cursor-pointer"
               width={1000}
               height={1000}
             />
@@ -146,19 +134,16 @@ export default function AboutHome({}: Props) {
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
             <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
               {/* name  */}
-              <span className="font-semibold text-lg">Everest Base Camp</span>
+              <span className="font-semibold text-xl ">Everest Base Camp</span>
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              Alpine Trekking
-              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
-                View
-              </button>
+              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
             </div>
             <Image
               src={BestSeller5}
               alt=""
-              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
+              className="w-full h-full object-cover object-center hover:brightness-50  cursor-pointer"
               width={1000}
               height={1000}
             />
@@ -166,19 +151,16 @@ export default function AboutHome({}: Props) {
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
             <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
               {/* name  */}
-              <span className="font-semibold text-lg">Everest Base Camp</span>
+              <span className="font-semibold text-xl ">Everest Base Camp</span>
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              Alpine Trekking
-              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
-                View
-              </button>
+              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
             </div>
             <Image
               src={BestSeller6}
               alt=""
-              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
+              className="w-full h-full object-cover object-center hover:brightness-50  cursor-pointer"
               width={1000}
               height={1000}
             />
@@ -186,19 +168,16 @@ export default function AboutHome({}: Props) {
           <div className="w-full h-[50vh] rounded-3xl overflow-hidden relative group">
             <div className="w-full group-hover:opacity-[1] opacity-0 duration-200 ease-linear mt-10  group-hover:mt-0 absolute text-white justify-center pointer-events-none text-center items-center flex flex-col gap-2 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
               {/* name  */}
-              <span className="font-semibold text-lg">Everest Base Camp</span>
+              <span className="font-semibold text-xl ">Everest Base Camp</span>
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              Alpine Trekking
-              <button className="mt-3 bg-[#FFFBEB]0 text-sm px-10 py-2 rounded-3xl">
-                View
-              </button>
+              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
             </div>
             <Image
               src={BestSeller7}
               alt=""
-              className="w-full h-full object-cover object-center hover:brightness-75  cursor-pointer"
+              className="w-full h-full object-cover object-center hover:brightness-50  cursor-pointer"
               width={1000}
               height={1000}
             />
