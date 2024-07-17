@@ -1,14 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import { Icon } from "@iconify/react";
-import ContourMap from "@/public/Contour-Map.svg";
 import Link from "next/link";
 type Props = {};
 
 export default function UpcomingExpedition({}: Props) {
   return (
     <div className="w-full mb-[5rem] relative">
-      {/* <Image alt="" src={ContourMap} className="w-full h-full absolute top-0 left-0"></Image> */}
       <div className="w-full flex justify-center items-center flex-col gap-10">
         {/* title top  */}
         <div className="flex flex-col w-full justify-center items-center gap-2">
