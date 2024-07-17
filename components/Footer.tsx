@@ -96,7 +96,7 @@ export default function Footer({}: Props) {
             <a
               href="https://webxnep.com/"
               target="_blank"
-              className="font-medium text-black italic cursor-pointer"
+              className="font-medium underline hover:scale-105 duration-200 text-black italic cursor-pointer"
             >
               Webx
             </a>

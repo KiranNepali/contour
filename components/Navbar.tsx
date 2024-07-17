@@ -297,7 +297,7 @@ function Navbar({}: Props) {
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
                     <Link
-                      href="/trip/trip_detail"
+                      href="/other_activities/rock_climbing "
                       onClick={() => setOpenNav(false)}
                     >
                       <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
