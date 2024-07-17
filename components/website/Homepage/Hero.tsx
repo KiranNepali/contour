@@ -52,9 +52,9 @@ export default function Hero({}: Props) {
       {/* middle  */}
       <div className="flex flex-col w-full gap-10">
         <div className="text-center z-10  relative  text-white   mx-auto flex justify-center items-center flex-col gap-2">
-          <h1 className="text-7xl hero-font tracking-widest  uppercase 3xl:text-7xl   font-extrabold">
+          <h1 className="text-7xl hero-font bg-gradient-to-bl bg-clip-text from-white to-yellow-100 text-transparent tracking-widest  uppercase 3xl:text-7xl   font-extrabold">
             Guided Adventure <br /> with{" "}
-            <span className="bg-white text-transparent bg-clip-text">
+            <span className="">
               Professionals
             </span>
           </h1>
