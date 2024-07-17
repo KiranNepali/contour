@@ -29,6 +29,17 @@ body::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #ffa500, #ffd700); /* Hover effect */
 }
 
+@font-face {
+  font-family: "HeroFont";
+  src: url("/fonts/hero-font.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hero-font {
+  font-family: "HeroFont", sans-serif;
+}
+
 /* HTML: <div className="loader"></div> */
 .loader {
   width: 108px;

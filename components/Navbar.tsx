@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import Ham from "@/public/hamburger.png";
 import Logo from "@/public/contour_expeditions_logo.webp";
@@ -57,20 +57,29 @@ function Navbar({}: Props) {
 
   // open animation
   const navContainerRef = useRef(null);
-  // useGSAP(() => {
-  //   gsap.from(navContainerRef.current, {
-  //     height: 0,
-  //     transformOrigin: "top",
-  //     duration: 0.5,
-  //     ease: "power4.out",
-  //   });
-  // });
+  const [isScrolled, setIsScrolled] = useState(false);
+  // const navContainerRef = useRef(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       <div
         ref={navContainerRef}
-        className={`fixed z-[100]  shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] nav-container bg-[#FFFBEB]  text-secondary-500 top-0  left-0 w-full h-[4rem] `}
+        className={`fixed z-[100] ${
+          isScrolled
+            ? "shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+            : ""
+        } nav-container bg-[#FFFBEB] text-secondary-500 top-0 left-0 w-full h-[4rem]`}
       >
         {/* mobile nav  */}
         {/* <div
