@@ -9,7 +9,7 @@ export default function BlogDetailMain({}: Props) {
   return (
     <>
       <div className="w-11/12 relative md:w-10/12 mx-auto py-[5rem]">
-        <Link href="/blog" className="w-[70%] mx-auto flex justify-start">
+        <Link href="/blogs" className="w-[70%] mx-auto flex justify-start">
           <div className="text-zinc-700 z-40 hover:scale-105 duration-300 hover:text-zinc-800 flex  justify-center items-center">
             <div className="overflow-hidden title flex justify-center items-center">
               <Icon

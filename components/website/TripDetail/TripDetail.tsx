@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import Lhotse from "@/public/Lhotse-peak.jpg";
+import Similar from "./Similar";
 type Props = {};
 
 function TripDetailMain({}: Props) {
@@ -62,27 +63,47 @@ function TripDetailMain({}: Props) {
           </div>
         </div>
 
+        {/* desc overview main  */}
+        <div className="bg-yellow-50">
+          <div className="pt-[2rem] w-[70%] mx-auto grid grid-cols-2 gap-y-3 gap-x-20">
+            {PackageDetail.map((item, index) => (
+              <div
+                key={index}
+                className="flex w-full gap-3 mx-auto items-center justify-between"
+              >
+                <div className="flex gap-2 items-center">
+                  <div className="w-[3.5rem] p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                    <Icon
+                      className="w-full h-full object-cover object-center"
+                      icon={item.icon}
+                    />
+                  </div>
+                  <span className="font-medium text-zinc-800">
+                    {item.title}
+                  </span>
+                </div>
+                <span className="text-zinc-700 text-end text-sm leading-relaxed">
+                  {item.desc}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="py-[5rem] w-11/12 flex flex-col md:flex-row justify-center relative items-start gap-3 mx-auto">
           {/* tab  link  */}
-          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[4rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
-            <div className="w-full py-1 overflow-x-scroll md:overflow-x-visible flex md:flex-col gap-5 font-medium items-center">
+          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8  backdrop-blur-sm  rounded-3xl sticky top-[4rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
+            <div className="w-full gap-5  overflow-x-scroll md:overflow-x-visible flex md:flex-col  font-medium items-center">
               {buttonLabels.map((item) => (
                 <a
                   href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
                   key={item.id}
-                  className={`cursor-pointer text-sm text-nowrap w-full text-zinc-800 hover:bg-yellow-400 border-x border-b hover:scale-105 rounded-3xl duration-300  flex justify-center items-center  px-5  h-[2.5rem] `}
+                  className={`cursor-pointer text-sm text-nowrap w-full text-zinc-800 py-5 border-yellow-50 hover:border-yellow-400 border rounded-3xl  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]  hover:text-yellow-500    hover:scale-105  duration-200  flex justify-center px-2 items-center  `}
                 >
                   {item.label}
                 </a>
               ))}
             </div>
-
-            <Link
-              href="/booking"
-              className={`cursor-pointer hiddenl bg-yellow-400   text-nowrap w-full text-white  0 rounded-3xl  duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] `}
-            >
-              Book now
-            </Link>
           </div>
           {/* detail  */}
 
@@ -161,14 +182,6 @@ function TripDetailMain({}: Props) {
               <div className="text-2xl route-map relative tracking-wide title font-semibold italic text-secondary-500">
                 Major Trip Attraction
               </div>
-              {/* <Image
-                width={1000}
-                height={1000}
-                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                className="overflow-hidded w-full h-full object-cover object-center"
-                alt=""
-              /> */}
-
               <div className="flex flex-col gap-2 mt-1">
                 {TripAttraction.map((item, index) => (
                   <p key={index} className=" text-zinc-700 leading-relaxed">
@@ -199,24 +212,162 @@ function TripDetailMain({}: Props) {
                 ))}
               </div>
             </div>
+
+            {/* gear listS  */}
+            <div
+              id="gear-list"
+              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+            >
+              {/* tile  */}
+              <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
+                Gear list
+              </div>
+              <div className="w-[60%]   mt-5 px-5 py-10 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_5px] rounded-3xl  flex flex-col gap-2">
+                <div className="flex  items-center  justify-between">
+                  <p className="font-semibold text-zinc-700">
+                    Gear Guide Book for Lhotse Expedition
+                  </p>
+                  <div className="flex gap-2 items-center">
+                    <div className="w-[3.5rem] cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                      <Icon
+                        className="w-full h-full object-cover object-center"
+                        icon="mdi:eye"
+                      />
+                    </div>
+                    <div className="w-[3.5rem] cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                      <Icon
+                        className="w-full h-full object-cover object-center"
+                        icon="material-symbols:download"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* tab  link  */}
-          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8  sticky top-[4rem] overflow-x-scroll md:overflow-x-visible bg-yellow-400 rounded-3xl md:top-[6rem] left-0  flex   items-center">
-            <div className="flex w-full  flex-col gap-2 py-5 0 px-3 h-[20vh] rounded-3xl">
-              <span className="font-semibold">USD</span>
-              <span className=" text-white font-medium">
+          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8 pb-2  sticky top-[4rem] overflow-x-scroll md:overflow-x-visible bg-yellow-400 rounded-3xl md:top-[6rem] left-0  flex   items-center">
+            <div className="flex w-full  flex-col gap-2 py-5 0 px-3  rounded-3xl">
+              <span className="font-semibold italic">USD</span>
+              <span className="text-zinc-50 font-medium">
                 From $17500 / person
               </span>
+            </div>
+
+            {/* BUTTON  */}
+            <div className="flex flex-col gap-2">
+              <Link href="/booking">
+                <button className="bg-yellow-200  text-center w-48 rounded-3xl h-14 relative font-sans text-black text-xl font-semibold group">
+                  <div className="bg-yellow-400 rounded-3xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
+                    <svg
+                      width="25px"
+                      height="25px"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="rotate-180"
+                    >
+                      <path
+                        fill="#000000"
+                        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                      ></path>
+                      <path
+                        fill="#000000"
+                        d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p className="translate-x-2 text-sm">Book now</p>
+                </button>
+              </Link>
+
+              <Link href="/contact_us">
+                <button className="bg-yellow-200  text-center w-48 rounded-3xl h-14 relative font-sans text-black text-xl font-semibold group">
+                  <div className="bg-yellow-400 rounded-3xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
+                    <svg
+                      width="25px"
+                      height="25px"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="rotate-180"
+                    >
+                      <path
+                        fill="#000000"
+                        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                      ></path>
+                      <path
+                        fill="#000000"
+                        d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p className="translate-x-2 text-sm">Enquiry</p>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
+
+      {/* similar package  */}
+      <Similar />
     </>
   );
 }
 
 export default TripDetailMain;
+
+const PackageDetail = [
+  {
+    id: 1,
+    title: "Group Size",
+    icon: "grommet-icons:group",
+    desc: `4 to 10 Climbers`,
+  },
+  { id: 2, title: "Trip Duration", icon: "clarity:date-line", desc: `58 Days` },
+  {
+    id: 3,
+    title: "Coordinates",
+    icon: "fontisto:map",
+    desc: `27° 57' 41.9976'' N, 86° 56' 0.0024'' E`,
+  },
+  {
+    id: 4,
+    title: "Mountain Range",
+    icon: "mdi:mountain",
+    desc: "Mahalangur Mountain Range",
+  },
+  {
+    id: 5,
+    title: "Maximum Altitude",
+    icon: "material-symbols:altitude-outline",
+    desc: `8,516 m`,
+  },
+  {
+    id: 5,
+    title: "Best Season",
+    icon: "fluent:weather-partly-cloudy-day-16-regular",
+    desc: `April to May`,
+  },
+  {
+    id: 5,
+    title: "Activities",
+    icon: "iconoir:trekking",
+    desc: `Mountaineering`,
+  },
+  {
+    id: 5,
+    title: "Difficulty",
+    icon: "carbon:skill-level",
+    desc: `Extreme / Physical`,
+  },
+  {
+    id: 5,
+    title: "Accomodation",
+    icon: "ph:buildings",
+    desc: `Tea House and Tented/ Full Board Package`,
+  },
+];
 
 const buttonLabels = [
   { id: 1, label: "Overview" },

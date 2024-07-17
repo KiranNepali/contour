@@ -8,7 +8,7 @@ type Props = {};
 
 export default function ContactUs({}: Props) {
   return (
-    <div className="w-full h-screen flex justify-center pt-[4rem] items-center">
+    <div className="w-full  flex-col  gap-3 flex justify-center pt-[4rem] items-center">
       <form
         action=""
         className="w-7/12 mx-auto p-3 h-[85vh] gap-2 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-3xl flex overflow-hidden"
@@ -24,7 +24,11 @@ export default function ContactUs({}: Props) {
 
           <div className="absolute z-30 text-white w-[3.5rem] h-[3.5rem]   top-5 left-3 gap-1 flex flex-col">
             {/* socio icon  */}
-            <Image  src={Logo} alt="contour-logo" className="w-full h-full  rounded-3xl"></Image>
+            <Image
+              src={Logo}
+              alt="contour-logo"
+              className="w-full h-full  rounded-3xl"
+            ></Image>
           </div>
 
           <div className="absolute z-30 text-white bottom-5 left-3 gap-1 flex flex-col">
@@ -168,6 +172,15 @@ export default function ContactUs({}: Props) {
           </div>
         </div>
       </form>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.9467638926862!2d85.31799757607914!3d27.718929924979417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a5032a9243%3A0xb8683e0e1a86fbc6!2sContour%20Expeditions%20Pvt.%20Ltd!5e0!3m2!1sen!2snp!4v1721215943008!5m2!1sen!2snp"
+        className="w-full h-[60vh] object-cover object-center pb-[3rem]"
+        // style="border:0;"
+        // allowfullscreen=""
+        loading="lazy"
+        // referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
   );
 }

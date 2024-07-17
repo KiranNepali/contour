@@ -436,11 +436,7 @@ function Navbar({}: Props) {
             </Link>
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
-                  currentRoute.includes("/other_activities")
-                    ? "text-yellow-500   duration-[0.5]"
-                    : ""
-                }`}
+                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500`}
               >
                 <span>Company</span>
                 <Icon
