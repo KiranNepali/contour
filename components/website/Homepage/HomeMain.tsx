@@ -35,7 +35,7 @@ function HomeMain({}: any) {
             <UpcomingPeakClimbing />
           </div>
           <div className="w-11/12 mx-auto">
-            <Faq />
+            <Faq /> 
           </div>
           <div className="w-full mx-auto">
             <Banner />

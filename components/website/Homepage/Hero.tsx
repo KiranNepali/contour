@@ -41,11 +41,10 @@ export default function Hero({}: Props) {
           className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-50"
         ></Image>
       </div>
-
       {/* middle  */}
       <div className="flex flex-col w-full gap-10">
         <div className="text-center z-10  relative  text-white   mx-auto flex justify-center items-center flex-col gap-2">
-          <h1 className="text-6xl  uppercase 3xl:text-8xl  font-bold">
+          <h1 className="text-6xl  uppercase 3xl:text-7xl   font-extrabold">
             Guided Adventure <br /> with <span className="bg-white text-transparent bg-clip-text">Professionals</span>
           </h1>
           <p className="text-sm text-white">
@@ -53,16 +52,16 @@ export default function Hero({}: Props) {
           </p>
         </div>
         {/* search  */}
-        <div className="w-[30%] rounded-3xl flex justify-center  items-center  overflow-hidden border relative z-10 h-[5vh] mx-auto ">
+        <div className="w-[30%] rounded-3xl flex justify-center   items-center  overflow-hidden shadow-[rgba(17,_17,_26,_0.6)_0px_0px_16px]   relative z-10 h-[5vh] mx-auto ">
           <input
             type="text"
-            className="w-full h-full text-sm text-secondary-100 p-3 placeholder:text-secondary-100 placeholder:text-sm  outline-none bg-transparent"
+            className="w-full h-full text-sm text-zinc-300 p-3  placeholder:text-secondary-100 placeholder:text-sm  outline-none bg-transparent"
             placeholder="Search"
           />
-          <div className="w-[4rem] flex cursor-pointer rounded-r-3xl justify-center items-center h-full 0">
+          <div className="w-[4rem] flex cursor-pointer rounded-r-3xl bg-yellow-400 justify-center items-center h-full 0">
             <Icon
               icon="quill:search"
-              className="w-[1.5rem] h-[1.5rem]  object-cover text-zinc-100 pointer-events-none object-center "
+              className="w-[1.5rem] h-[1.5rem]  object-cover text-zinc-800 pointer-events-none object-center "
             />
           </div>
         </div>
