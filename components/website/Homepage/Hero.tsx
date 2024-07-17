@@ -31,20 +31,22 @@ export default function Hero({}: Props) {
     });
   });
   return (
-    <div className="w-11/12 mx-auto h-[95vh] mt-[9vh] rounded-3xl overflow-hidden relative text-white flex justify-center items-center">
+    <div className="w-11/12 mx-auto h-[95vh] mt-[4.2rem] rounded-3xl overflow-hidden relative text-white flex justify-center items-center">
+      <div className="absolute bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-black to-transparent z-10"></div>
       {/* image  */}
-
-      <Image
-        src={Banner}
-        alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-50"
-      ></Image>
+      <div>
+        <Image
+          src={Banner}
+          alt=""
+          className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-50"
+        ></Image>
+      </div>
 
       {/* middle  */}
       <div className="flex flex-col w-full gap-10">
         <div className="text-center z-10  relative  text-white   mx-auto flex justify-center items-center flex-col gap-2">
           <h1 className="text-6xl  uppercase 3xl:text-8xl  font-bold">
-            Guided Adventure <br /> with <span className="">Professionals</span>
+            Guided Adventure <br /> with <span className="bg-white text-transparent bg-clip-text">Professionals</span>
           </h1>
           <p className="text-sm text-white">
             A deeply personal experience at the heart of LeCrans
@@ -65,11 +67,11 @@ export default function Hero({}: Props) {
           </div>
         </div>
       </div>
-      {/* <div className="absolute bottom-10 flex gap-10 right-[10%] z-10">
+      <div className="absolute bottom-10 flex justify-center gap-10 left-[50%] translate-x-[-50%] z-10">
         <div className="flex  gap-3 justify-center items-center">
           <span className="flex gap-2 text-secondary-50 text-sm items-center">
             Associated with{" "}
-            <span className="text-lg text-primary-default">|</span>{" "}
+            <span className="text-lg text-yellow-400">|</span>{" "}
           </span>
           <div className="flex gap-1 justify-center items-center">
             <Image
@@ -92,7 +94,7 @@ export default function Hero({}: Props) {
 
         <div className="flex  gap-3 justify-center items-center">
           <span className="flex gap-2 text-secondary-50 text-sm items-center">
-            Certified by <span className="text-lg text-primary-default">|</span>
+            Certified by <span className="text-lg text-yellow-400">|</span>
           </span>
           <div className="flex gap-1 justify-center items-center">
             <Image
@@ -102,7 +104,7 @@ export default function Hero({}: Props) {
             ></Image>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

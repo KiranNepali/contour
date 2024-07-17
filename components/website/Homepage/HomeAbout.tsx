@@ -18,9 +18,14 @@ export default function AboutHome({}: Props) {
         {/* CARDS  */}
         <div className="grid w-full mx-auto grid-cols-4 gap-2">
           <div className="flex items-start justify-center flex-col gap-2">
-            <h1 className="uppercase font-semibold text-3xl tracking-wider">
-              Best sellers
-            </h1>
+            {/* title  */}
+            <div className="w-auto flex-col flex gap-2 justify-start items-start">
+              <h1 className="text-3xl uppercase text-secondary-500 text-center  font-bold">
+                Best sellers
+              </h1>
+              <hr className="bg-yellow-500 h-[2px] overflow-hidden w-[55%] rounded-full" />
+            </div>
+
             <p className="text-zinc-700 leading-relaxed">
               At{" "}
               <span className="font-medium italic">

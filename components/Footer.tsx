@@ -13,7 +13,7 @@ export default function Footer({}: Props) {
           height={1000}
           src={ContourMap}
           alt="expedition-image"
-          className="w-full absolute top-0 left-0 opacity-[0.035]  rounded-3xl h-full mx-auto object-cover object-center"
+          className="w-full absolute top-0 left-0 opacity-[0.025]  rounded-3xl h-full mx-auto object-cover object-center"
         />
         {/* <div className="absolute top-0 left-0 w-full h-full bg-yellow-200 opacity-[0.2] rounded-3xl"></div> */}
         <div className="w-full grid grid-cols-4 relative place-items-start gap-4">

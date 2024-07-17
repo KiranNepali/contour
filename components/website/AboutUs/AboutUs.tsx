@@ -47,7 +47,7 @@ export default function Aboutus({}: Props) {
 
         {/* bottom goals  */}
       </div>
-      <div className="w-11/12 mx-auto  grid grid-cols-3 gap-5 my-[5rem]">
+      <div className="w-11/12 mx-auto  grid grid-cols-3 gap-5 py-[5rem]">
         {Vision.map((item) => (
           <div
             key={item.id}

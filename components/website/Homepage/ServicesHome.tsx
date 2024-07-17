@@ -35,7 +35,7 @@ export default function ServicesHome({}: Props) {
             key={index}
             className="w-full cursor-pointer overflow-hidden p-10 relative  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-3xl "
           >
-            <div className="absolute rounded-3xl top-0 left-0 w-full h-full bg-yellow-400 opacity-[0.03]"></div>
+            <div className="absolute rounded-3xl top-0 left-0 w-full h-full bg-black opacity-[0.025]"></div>
             <div className="w-full justify-between flex items-center">
               <div className="flex flex-col gap-2">
                 <div className="w-[3rem] p-2 h-[3rem] bg-yellow-400 rounded-full">

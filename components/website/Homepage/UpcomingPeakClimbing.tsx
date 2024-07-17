@@ -34,6 +34,7 @@ export default function UpcomingPeakClimbing({}: Props) {
                 key={index}
                 className="w-full cursor-pointer group hover:scale-95 duration-300  overflow-hidden  relative rounded-3xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] h-[60vh]"
               >
+                <div className="absolute rounded-3xl top-0 left-0 w-full h-full bg-black opacity-[0.025]"></div>
                 <div className="rounded-b-3xl w-full h-[70%] overflow-hidden">
                   <Image
                     width={1000}
