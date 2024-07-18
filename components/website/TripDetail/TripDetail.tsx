@@ -108,7 +108,7 @@ function TripDetailMain({}: Props) {
                     </a>
                   </div>
 
-                  <span>></span>
+                  <span>{`>`}</span>
                 </div>
               ))}
             </div>
@@ -235,31 +235,26 @@ function TripDetailMain({}: Props) {
                   </p>
                 </div>
 
-                 <div className="flex gap-2 items-center">
-                    <div className="w-[10rem] relative cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
-                      <Icon
-                        className="w-full h-full object-cover object-center"
-                        icon="mdi:eye"
-                      />
-                    </div>
-                  
-
-                    <div className="w-[10rem] cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                <div className="flex gap-2 items-center">
+                  <div className="w-[10rem] relative cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
                     <Icon
-                        className="w-full h-full object-cover object-center"
-                        icon="material-symbols:download"
-                      />
-                    </div>
-
-
-                 
+                      className="w-full h-full object-cover object-center"
+                      icon="mdi:eye"
+                    />
                   </div>
+
+                  <div className="w-[10rem] cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                    <Icon
+                      className="w-full h-full object-cover object-center"
+                      icon="material-symbols:download"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
-
-             {/* gallery  */}
-             <div
+            {/* gallery  */}
+            <div
               id="gallery"
               className="w-full mx-auto py-[4.5rem] px-[2rem] bg-yellow-100/10  rounded-2xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
@@ -268,11 +263,31 @@ function TripDetailMain({}: Props) {
                 Gallery
               </div>
               <div className="w-full   mt-5  grid grid-cols-3 rounded-3xl  gap-2">
-                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 " ></Image>
-                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] col-span-2  object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 rounded-2xl"></Image>
-                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "></Image>
-                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "></Image>
-                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "></Image>
+                <Image
+                  src={Lhotse}
+                  alt="gallery"
+                  className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "
+                ></Image>
+                <Image
+                  src={Lhotse}
+                  alt="gallery"
+                  className="w-full h-[40vh] col-span-2  object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 rounded-2xl"
+                ></Image>
+                <Image
+                  src={Lhotse}
+                  alt="gallery"
+                  className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "
+                ></Image>
+                <Image
+                  src={Lhotse}
+                  alt="gallery"
+                  className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "
+                ></Image>
+                <Image
+                  src={Lhotse}
+                  alt="gallery"
+                  className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "
+                ></Image>
               </div>
             </div>
           </div>
@@ -285,7 +300,10 @@ function TripDetailMain({}: Props) {
               {/* </div> */}
               <span className="flex gap-4 items-start justify-start font-medium">
                 <div className="flex flex-col">
-                  <span className="text-zinc-800 text-sm">From <span className="font-semibold text-normal">$17500</span></span>
+                  <span className="text-zinc-800 text-sm">
+                    From{" "}
+                    <span className="font-semibold text-normal">$17500</span>
+                  </span>
                   <s className="text-zinc-700">US $350</s>
                 </div>{" "}
                 <span className="text-zinc-700 text-sm">per person</span>
@@ -295,23 +313,33 @@ function TripDetailMain({}: Props) {
             <div className="flex flex-col gap-2">
               <div className="flex gap-1 items-center">
                 <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
-                <span className="text-sm text-zinc-700 font-medium">Guarenteed Departures</span>
+                <span className="text-sm text-zinc-700 font-medium">
+                  Guarenteed Departures
+                </span>
               </div>
               <div className="flex gap-1 items-center">
                 <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
-                <span className="text-sm text-zinc-700 font-medium">All Inclusive Pricing</span>
+                <span className="text-sm text-zinc-700 font-medium">
+                  All Inclusive Pricing
+                </span>
               </div>
               <div className="flex gap-1 items-center">
                 <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
-                <span className="text-sm text-zinc-700 font-medium">Customizable Iteneraries</span>
+                <span className="text-sm text-zinc-700 font-medium">
+                  Customizable Iteneraries
+                </span>
               </div>
               <div className="flex gap-1 items-center">
                 <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
-                <span className="text-sm text-zinc-700 font-medium">24/7 customer support</span>
+                <span className="text-sm text-zinc-700 font-medium">
+                  24/7 customer support
+                </span>
               </div>
               <div className="flex gap-1 items-center">
                 <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
-                <span className="text-sm text-zinc-700 font-medium">Easy cancellation</span>
+                <span className="text-sm text-zinc-700 font-medium">
+                  Easy cancellation
+                </span>
               </div>
             </div>
 

@@ -61,8 +61,8 @@ export default function MesssageFromCeo({}: Props) {
       <div className="w-full py-4  h-[20vh] flex items-center gap-2">
         <div className="h-full w-1 bg-yellow-400"></div>
         <p className="text-3xl font-medium text-zinc-800">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
-          tempore."
+          {` "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
+          tempore."`}
         </p>
       </div>
 
