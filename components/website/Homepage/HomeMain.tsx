@@ -21,7 +21,6 @@ function HomeMain({}: any) {
           <Hero />
         </div>
         <div className="w-full relative  content-main    z-20">
-          {/* <Try /> */}
           <div className="w-11/12 mx-auto">
             <HomeAbout />
           </div>
@@ -35,7 +34,7 @@ function HomeMain({}: any) {
             <UpcomingPeakClimbing />
           </div>
           <div className="w-11/12 mx-auto">
-            <Faq /> 
+            <Faq />
           </div>
           <div className="w-full mx-auto">
             <Banner />

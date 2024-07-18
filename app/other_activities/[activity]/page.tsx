@@ -7,7 +7,7 @@ type Props = {};
 function page({ params }: any) {
   const { activity } = params;
   return (
-    <main className=" z-[20]  bg-[#FFFBEB]">
+    <main className=" z-[20]  bg-yellow-50">
       <OtherActivitiesMain activity={activity} />
     </main>
   );

@@ -49,7 +49,7 @@ export default function RootLayout({
         <Navbar />
         <div
           className={`w-full h-full "
-           bg-[#FFFBEB] z-20`}
+           bg-yellow-50 z-20`}
         >
           {children}
         </div>

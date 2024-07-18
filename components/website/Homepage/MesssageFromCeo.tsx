@@ -11,7 +11,7 @@ export default function MesssageFromCeo({}: Props) {
         <Image
           src={Ceo}
           alt="ceo-image"
-          className="w-[30%] h-[50vh] object-cover object-center"
+          className="w-[30%] h-[50vh] rounded-3xl object-cover object-center"
         ></Image>
         <div className="flex w-[30%] flex-col">
           <h1
@@ -20,15 +20,20 @@ export default function MesssageFromCeo({}: Props) {
           >
             Message from Ceo
           </h1>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3 mt-10">
             <div className="flex justify-start">
-              <Icon icon="simple-icons:comma" className="w-[3rem] text-yellow-500 rotate-180  h-[3rem]" />
+              <Icon
+                icon="simple-icons:comma"
+                className="w-[3rem] text-yellow-500 rotate-180  h-[3rem]"
+              />
               <Icon
                 icon="simple-icons:comma"
                 className="w-[3rem] text-yellow-500 rotate-180  -ml-3 h-[3rem]"
               />
             </div>
-            <p className="text-zinc-700 text-sm">“Guided Adventure with the Professional”</p>
+            <p className="text-zinc-700 font-medium  text-nowrap">
+              “Guided Adventure with the Professional”
+            </p>
           </div>
         </div>
       </div>
@@ -53,7 +58,13 @@ export default function MesssageFromCeo({}: Props) {
       </p>
 
       {/* banner  */}
-      <div className="w-full py-4 bg-black h-[20vh]">hi</div>
+      <div className="w-full py-4  h-[20vh] flex items-center gap-2">
+        <div className="h-full w-1 bg-yellow-400"></div>
+        <p className="text-3xl font-medium text-zinc-800">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
+          tempore."
+        </p>
+      </div>
 
       <p className="text-zinc-700 leading-relaxed">
         {`

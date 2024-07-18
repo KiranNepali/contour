@@ -47,7 +47,7 @@ function TripDetailMain({}: Props) {
   return (
     <>
       <div className="w-full h-full  text-secondary-500 relative">
-        <div className="w-full h-[83vh] mt-[4rem] relative  flex justify-center items-end">
+        <div className="w-full h-[83vh] mt-[4rem] relative items-end  flex justify-center">
           <Image
             width={1000}
             height={1000}
@@ -62,29 +62,30 @@ function TripDetailMain({}: Props) {
             <p className="w-[70%] text-zinc-100">{`Mount Lhotse is one of the world's tallest mountains, with its summit reaching 8,516 meters (27,940 feet) above sea level. Its high altitude presents significant challenges to climbers due to decreased oxygen levels and extreme weather conditions.`}</p>
           </div>
         </div>
-
         {/* desc overview main  */}
-        <div className="bg-yellow-50">
-          <div className="pt-[2rem] w-[70%] mx-auto grid grid-cols-2 gap-y-3 gap-x-20">
+        <div className="bg-yellow-100/20  rounded-2xl w-full mx-auto relative ">
+          <div className="py-10 w-11/12 mx-auto grid grid-cols-3 gap-y-3 place-content-center place-items-center gap-x-20">
             {PackageDetail.map((item, index) => (
               <div
                 key={index}
-                className="flex w-full gap-3 mx-auto items-center justify-between"
+                className="flex w-full gap-3 mx-auto items-center justify-start"
               >
                 <div className="flex gap-2 items-center">
-                  <div className="w-[3.5rem] p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                  <div className="w-[3.5rem] p-4 h-[3.5rem] bg-yellow-400 rounded-xl">
                     <Icon
                       className="w-full h-full object-cover object-center"
                       icon={item.icon}
                     />
                   </div>
+                </div>
+                <div className="flex flex-col">
                   <span className="font-medium text-zinc-800">
                     {item.title}
                   </span>
+                  <span className="text-zinc-700 text-left text-sm leading-relaxed">
+                    {item.desc}
+                  </span>
                 </div>
-                <span className="text-zinc-700 text-end text-sm leading-relaxed">
-                  {item.desc}
-                </span>
               </div>
             ))}
           </div>
@@ -92,16 +93,23 @@ function TripDetailMain({}: Props) {
 
         <div className="py-[5rem] w-11/12 flex flex-col md:flex-row justify-center relative items-start gap-3 mx-auto">
           {/* tab  link  */}
-          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8  backdrop-blur-sm  rounded-3xl sticky top-[4rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
-            <div className="w-full gap-5  overflow-x-scroll md:overflow-x-visible flex md:flex-col  font-medium items-center">
+          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8  backdrop-blur-sm   sticky top-[4rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
+            <div className="w-full  overflow-hidden flex md:flex-col justify-center  font-medium items-start ">
               {buttonLabels.map((item) => (
-                <a
-                  href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
-                  key={item.id}
-                  className={`cursor-pointer text-sm text-nowrap w-full text-zinc-800 py-5 border-yellow-50 hover:border-yellow-400 border rounded-3xl  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]  hover:text-yellow-500    hover:scale-105  duration-200  flex justify-center px-2 items-center  `}
-                >
-                  {item.label}
-                </a>
+                <div className="flex items-center border-b group hover:text-yellow-500  duration-200  w-full  justify-between  ">
+                  <div className="flex items-center">
+                    <Icon icon={item.icon} className="w-[1.5rem]  h-[1.5rem]" />
+                    <a
+                      href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
+                      key={item.id}
+                      className={`cursor-pointer text-sm text-nowrap  w-full  py-3 group-hover:scale-105   duration-200  flex justify-start px-3 items-center  `}
+                    >
+                      {item.label}
+                    </a>
+                  </div>
+
+                  <span>></span>
+                </div>
               ))}
             </div>
           </div>
@@ -111,16 +119,14 @@ function TripDetailMain({}: Props) {
             {/* overvieew  */}
             <div
               id="overview"
-              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto py-[4.5rem] px-[2rem] bg-yellow-100/10  rounded-2xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl overview relative tracking-wide title font-semibold italic text-secondary-500">
                 Overview
               </div>
               <div className="w-full leading-relaxed  text-zinc-700">
                 {`Mount Lhotse is one of the world's tallest mountains, with its
-                summit reaching 8,516 meters (27,940 feet) above sea level. Its
-                high altitude presents significant challenges to climbers due to
-                decreased oxygen levels and extreme weather conditions.`}
+                summit reaching 8,516 meters (27,940 feet) above sea level.`}
               </div>
               <button className="font-medium mt-3 italic underline">
                 Read more
@@ -129,23 +135,23 @@ function TripDetailMain({}: Props) {
             {/* iternary  */}
             <div
               id="itinerary"
-              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto py-[4.5rem] px-[2rem] bg-yellow-100/10   rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               {/* tile  */}
               <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
                 Itinerary
               </div>
-              <div className="w-full h-full flex flex-col gap-2">
+              <div className="w-full h-full mt-6 flex flex-col gap-2">
                 {ItineraryData.map((item, index) => (
                   <div
                     onClick={() => toggleOpen(index)}
                     key={index}
-                    className="w-full cursor-pointer  rounded-3xl shadow-[rgba(17,_17,_26,_0.1)_0px_0px_5px]  py-4 md:py-2  overflow-hidden    items-center flex flex-col justify-between px-3 md:px-10"
+                    className="w-full cursor-pointer  rounded-3xl  shadow-[rgba(17,_17,_26,_0.1)_0px_0px_5px]  py-4 md:py-2  overflow-hidden    items-center flex flex-col justify-between px-5"
                   >
                     <div className="w-full h-[4rem] flex  justify-between items-center">
                       <div className="flex gap-10 items-center">
                         {/* day */}
-                        <div className="font-semibold justify-center items-center w-[3rem] leading-none h-[3rem] rounded-full overflow-hidden  text-white bg-yellow-400     text-[12px] flex flex-col gap-1">
+                        <div className="font-semibold justify-center items-center w-[3rem] leading-none h-[3rem] rounded-xl overflow-hidden  text-white bg-yellow-400     text-[12px] flex flex-col gap-1">
                           <span>Day</span>
                           <span>{item.day}</span>
                         </div>
@@ -177,7 +183,7 @@ function TripDetailMain({}: Props) {
             {/* MAJOR TRIP INFODRMATION  */}
             <div
               id="trip-attraction"
-              className="w-full h-[70vh] mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full h-[70vh] mx-auto py-[4.5rem] px-[2rem] bg-yellow-100/10  rounded-2xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl route-map relative tracking-wide title font-semibold italic text-secondary-500">
                 Major Trip Attraction
@@ -193,7 +199,7 @@ function TripDetailMain({}: Props) {
             {/* essectial indormatrion  */}
             <div
               id="essential-information"
-              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto py-[4.5rem] px-[2rem] bg-yellow-100/10  rounded-2xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               {/* tile  */}
               <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
@@ -216,43 +222,97 @@ function TripDetailMain({}: Props) {
             {/* gear listS  */}
             <div
               id="gear-list"
-              className="w-full mx-auto p-[4.5rem]  rounded-3xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto py-[4.5rem] px-[2rem] bg-yellow-100/10  rounded-2xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               {/* tile  */}
               <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
                 Gear list
               </div>
-              <div className="w-[60%]   mt-5 px-5 py-10 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_5px] rounded-3xl  flex flex-col gap-2">
+              <div className="w-[60%]   mt-5     flex flex-col gap-2">
                 <div className="flex  items-center  justify-between">
                   <p className="font-semibold text-zinc-700">
                     Gear Guide Book for Lhotse Expedition
                   </p>
-                  <div className="flex gap-2 items-center">
-                    <div className="w-[3.5rem] cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                </div>
+
+                 <div className="flex gap-2 items-center">
+                    <div className="w-[10rem] relative cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
                       <Icon
                         className="w-full h-full object-cover object-center"
                         icon="mdi:eye"
                       />
                     </div>
-                    <div className="w-[3.5rem] cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
-                      <Icon
+                  
+
+                    <div className="w-[10rem] cursor-pointer hover:scale-95 duration-200 p-4 h-[3.5rem] bg-yellow-400 rounded-full">
+                    <Icon
                         className="w-full h-full object-cover object-center"
                         icon="material-symbols:download"
                       />
                     </div>
+
+
+                 
                   </div>
-                </div>
+              </div>
+            </div>
+
+
+             {/* gallery  */}
+             <div
+              id="gallery"
+              className="w-full mx-auto py-[4.5rem] px-[2rem] bg-yellow-100/10  rounded-2xl   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+            >
+              {/* tile  */}
+              <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
+                Gallery
+              </div>
+              <div className="w-full   mt-5  grid grid-cols-3 rounded-3xl  gap-2">
+                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 " ></Image>
+                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] col-span-2  object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 rounded-2xl"></Image>
+                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "></Image>
+                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "></Image>
+                <Image src={Lhotse} alt="gallery" className="w-full h-[40vh] rounded-2xl object-cover object-center brightness-90 cursor-pointer hover:brightness-100 duration-200 "></Image>
               </div>
             </div>
           </div>
 
           {/* tab  link  */}
-          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8 pb-2  sticky top-[4rem] overflow-x-scroll md:overflow-x-visible bg-yellow-400 rounded-3xl md:top-[6rem] left-0  flex   items-center">
-            <div className="flex w-full  flex-col gap-2 py-5 0 px-3  rounded-3xl">
-              <span className="font-semibold italic">USD</span>
-              <span className="text-zinc-50 font-medium">
-                From $17500 / person
+          <div className="mx-auto  w-full md:w-[20%] flex-col gap-8 pb-2 overflow-hidden  sticky top-[4rem] overflow-x-scroll md:overflow-x-visible bg-yellow-500 rounded-2xl md:top-[6rem] left-0  flex   items-center">
+            <div className="flex w-full  flex-col gap-4 py-5 0 px-3  rounded-b-3xl  bg-yellow-400 border-b">
+              {/* <div className="w-full rounded-3xl p-2  border"> */}
+              <span className="font-semibold text-lg">USD</span>
+              {/* </div> */}
+              <span className="flex gap-4 items-start justify-start font-medium">
+                <div className="flex flex-col">
+                  <span className="text-zinc-800 text-sm">From <span className="font-semibold text-normal">$17500</span></span>
+                  <s className="text-zinc-700">US $350</s>
+                </div>{" "}
+                <span className="text-zinc-700 text-sm">per person</span>
               </span>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-1 items-center">
+                <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
+                <span className="text-sm text-zinc-700 font-medium">Guarenteed Departures</span>
+              </div>
+              <div className="flex gap-1 items-center">
+                <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
+                <span className="text-sm text-zinc-700 font-medium">All Inclusive Pricing</span>
+              </div>
+              <div className="flex gap-1 items-center">
+                <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
+                <span className="text-sm text-zinc-700 font-medium">Customizable Iteneraries</span>
+              </div>
+              <div className="flex gap-1 items-center">
+                <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
+                <span className="text-sm text-zinc-700 font-medium">24/7 customer support</span>
+              </div>
+              <div className="flex gap-1 items-center">
+                <Icon icon="mdi:offer" className="w-[1.5rem] h-[1.5rem]" />
+                <span className="text-sm text-zinc-700 font-medium">Easy cancellation</span>
+              </div>
             </div>
 
             {/* BUTTON  */}
@@ -370,11 +430,13 @@ const PackageDetail = [
 ];
 
 const buttonLabels = [
-  { id: 1, label: "Overview" },
-  { id: 2, label: "Itinerary" },
-  { id: 3, label: "Trip Attraction" },
-  { id: 4, label: "Essential Information" },
-  { id: 5, label: "Gear List" },
+  { id: 1, label: "Overview", icon: "grommet-icons:overview" },
+  { id: 2, label: "Itinerary", icon: "bi:bar-chart-steps" },
+  { id: 3, label: "Trip Attraction", icon: "grommet-icons:attraction" },
+  { id: 4, label: "Essential Information", icon: "ri:information-2-line" },
+  { id: 5, label: "Gear List", icon: "carbon:gears" },
+  { id: 6, label: "Gallery", icon: "solar:gallery-bold" },
+  { id: 6, label: "Fixed dates", icon: "gg:calendar-dates" },
 ];
 
 const ItineraryData = [

@@ -6,7 +6,7 @@ type Props = {};
 
 export default function Loading({}: Props) {
   return (
-    <div className="w-full h-screen bg-[#FFFBEB] relative z-[20] flex  justify-center items-center">
+    <div className="w-full h-screen bg-yellow-50 relative z-[20] flex  justify-center items-center">
       <div className="">
         <Image
           src={LogoIcon}

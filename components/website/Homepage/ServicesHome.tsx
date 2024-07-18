@@ -28,7 +28,6 @@ export default function ServicesHome({}: Props) {
           className="w-full h-full"
         ></Image>
       </div>
-
       <div className="w-11/12 mx-auto grid grid-cols-3 mt-[3rem] px-1 gap-10 relative">
         {ServicesData.map((item, index) => (
           <div

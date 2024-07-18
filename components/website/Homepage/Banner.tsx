@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 import SplitType from "split-type";
+import BannerImg from "@/public/banner.avif";
+import PhoneRing from "@/public/ring.gif";
 
 type Props = {};
 
@@ -65,14 +67,14 @@ function Banner({}: Props) {
       <Image
         width={1000}
         height={1000}
-        src="https://images.unsplash.com/photo-1545787636-35db70ee2e6a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src={BannerImg}
         alt="banner-image"
         className="absolute scale-110 top-0 banner-img left-0 brightness-[0.5] w-full h-full object-cover object-bottom"
       ></Image>
       <div className="relative z-20 w-11/12 md:w-10/12 flex flex-col md:flex-row justify-between items-center gap-5 mx-auto">
         <div className="md:w-[70%] flex items-start justify-start flex-col gap-2">
           <span className="text-sm banner-desc  inline-block   md:text-lg  leading-relaxed text-zinc-200">
-            Contact contour expedition  for the best adventure of your life.
+            Contact contour expedition for the best adventure of your life.
           </span>
           <h1
             ref={aboutTitleRef}

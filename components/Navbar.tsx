@@ -11,6 +11,16 @@ import { gsap, Expo } from "gsap";
 import { usePathname } from "next/navigation";
 import Package from "@/public/Lhotse-peak.jpg";
 
+import BestSeller1 from "@/public/BestSellers/Best1.jpg";
+import BestSeller2 from "@/public/BestSellers/best2.webp";
+import BestSeller3 from "@/public/BestSellers/best3.jpg";
+import BestSeller5 from "@/public/BestSellers/best2.jpg";
+
+import Paragliding1 from "@/public/OtherActivities/Paragliding/paragliding1.avif";
+import Paragliding2 from "@/public/OtherActivities/Paragliding/paragliding2.avif";
+import Paragliding3 from "@/public/OtherActivities/Paragliding/paragliding3.avif";
+import Paragliding4 from "@/public/OtherActivities/Paragliding/paragliding4.avif";
+import Paragliding5 from "@/public/OtherActivities/Paragliding/paragliding5.avif";
 type Props = {};
 
 const sideNavLinks = [
@@ -71,6 +81,33 @@ function Navbar({}: Props) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const [SelectedExp, setSelectedExp] = useState("Above 8k");
+
+  const filteredExpeditionsPackage = expeditionsPackage.filter(
+    (route: any) => route.name === SelectedExp
+  );
+
+  const [selectedRegion, setSelectedRegion] = useState("Annapurna Region");
+
+  const currentPackages = trekkingPackage.find(
+    (pkg) => pkg.name === selectedRegion
+  )?.package;
+
+  const [selectedActivity, setSelectedActivity] = useState("Canyoning");
+
+  const selectActivityPackages = activitiesPackage.find(
+    (pkg) => pkg.name === selectedActivity
+  )?.package;
+
+  const [selectedTraining, setSelectedTraining] = useState(
+    "Basic Mountaineering course"
+  );
+
+  const selectTrainingPackages = trainingPackage.find(
+    (pkg) => pkg.name === selectedTraining
+  )?.package;
+
   return (
     <>
       <div
@@ -79,33 +116,8 @@ function Navbar({}: Props) {
           isScrolled
             ? "shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
             : ""
-        } nav-container bg-[#FFFBEB] text-secondary-500 top-0 left-0 w-full h-[4rem]`}
+        } nav-container bg-yellow-50 text-secondary-500 top-0 left-0 w-full h-[4rem]`}
       >
-        {/* mobile nav  */}
-        {/* <div
-        ref={sideNavRef}
-        className="absolute  md:hidden w-[100vw] flex justify-center items-center top-0 right-[-100%]  h-[100vh] mx-auto bg-secondary-50 text-secondary-500 py-2"
-      >
-        <div className="w-11/12 mx-auto  grid grid-cols-1  gap-5 place-content-center pt-[5rem] text-start h-full place-items-start  flex-col justify-center items-center">
-          {sideNavLinks.map((link, index) => (
-            <>
-              <Link
-                onClick={() => handleLink(index)}
-                key={index}
-                className="w-full"
-                href={link.href}
-              >
-                <div className="title  links text-lg border-b mb-1 opacity-0 font-medium tracking-wide w-full flex justify-between items-center">
-                  {link.title} <span></span> <span></span>
-                </div>
-                <div
-                  className={`w-full  openlinks-${index} bg-green-200 h-0`}
-                ></div>
-              </Link>
-            </>
-          ))}
-        </div>
-      </div> */}
         {/* LOGO  */}
         <div className="w-full md:hidden  text-secondary-500 relative  tracking-wide  mx-auto h-full flex  justify-between items-center gap-5">
           {/* LOGO  */}
@@ -150,56 +162,39 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex   duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+              <div className="absolute hidden  nav-down bg-yellow-50 rounded-3xl  gap-2  group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
                 <div className="flex flex-col">
-                  {expeditionsLink.map((trek) => (
-                    <div key={trek.href} className="py-1 flex flex-col">
-                      <Link href="">
-                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
-                          {trek.name}
-                        </div>
-                      </Link>
+                  {expeditionsLink.map((trek: any) => (
+                    <div
+                      onClick={() => setSelectedExp(trek.name)}
+                      key={trek.href}
+                      className="py-1 flex flex-col"
+                    >
+                      <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
+                        {trek.name}
+                      </div>
                     </div>
                   ))}
                 </div>
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
+                    {filteredExpeditionsPackage.map((route, routeIndex) =>
+                      route.package.map((pkg, pkgIndex) => (
+                        <Link
+                          key={`${routeIndex}-${pkgIndex}`}
+                          href="/trip/trip_detail"
+                          onClick={() => setOpenNav(false)}
+                        >
+                          <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                            <Image
+                              src={pkg}
+                              alt={`Package ${pkg}`}
+                              className="object-cover object-center w-full h-full rounded-3xl brightness-75"
+                            />
+                          </div>
+                        </Link>
+                      ))
+                    )}
                   </div>
                   {/* BUTTON  */}
                   <Link href="/">
@@ -238,9 +233,9 @@ function Navbar({}: Props) {
             {/* trekking  */}
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
+                className={`flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/trek")
-                    ? "text-yellow-500 font-medium  duration-[0.5]"
+                    ? "text-yellow-500 font-medium duration-[0.5]"
                     : ""
                 }`}
               >
@@ -250,58 +245,39 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+              <div className="absolute hidden nav-down bg-yellow-50 rounded-3xl gap-2 group-hover:flex duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap shadow p-5">
                 <div className="flex flex-col">
                   {treksLink.map((trek) => (
-                    <div key={trek.href} className="py-1 flex flex-col">
-                      <Link href="">
-                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
-                          {trek.name}
-                        </div>
-                      </Link>
+                    <div
+                      key={trek.href}
+                      className="py-1 flex flex-col"
+                      onClick={() => setSelectedRegion(trek.name)}
+                    >
+                      <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
+                        {trek.name}
+                      </div>
                     </div>
                   ))}
                 </div>
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
+                    {currentPackages.map((pkg, index) => (
+                      <Link
+                        key={index}
+                        href="/trip/trip_detail"
+                        onClick={() => setOpenNav(false)}
+                      >
+                        <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                          <Image
+                            src={pkg}
+                            alt={`Package ${index + 1}`}
+                            className="object-cover object-center w-full h-full rounded-3xl brightness-75"
+                          />
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                  {/* BUTTON  */}
+                  {/* BUTTON */}
                   <Link href="/">
                     <div className="relative mt-4">
                       <button className="bg-yellow-200 text-center w-[150px] rounded-3xl h-12 font-sans text-black text-xl font-semibold">
@@ -339,9 +315,9 @@ function Navbar({}: Props) {
             {/* other activities  */}
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
+                className={`flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/other_activities")
-                    ? "text-yellow-500   duration-[0.5]"
+                    ? "text-yellow-500 duration-[0.5]"
                     : ""
                 }`}
               >
@@ -351,58 +327,39 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap   shadow p-5">
+              <div className="absolute hidden nav-down bg-yellow-50 rounded-3xl gap-2 group-hover:flex duration-[0.5] top-[100%] left-0 w-[60vw] whitespace-nowrap shadow p-5">
                 <div className="flex flex-col">
                   {activitiesLink.map((activity) => (
-                    <div key={activity.href} className="py-1 flex flex-col">
-                      <Link href={activity.href}>
-                        <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
-                          {activity.name}
-                        </div>
-                      </Link>
+                    <div
+                      key={activity.href}
+                      className="py-1 flex flex-col"
+                      onClick={() => setSelectedActivity(activity.name)}
+                    >
+                      <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
+                        {activity.name}
+                      </div>
                     </div>
                   ))}
                 </div>
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
-                    <Link
-                      href="/other_activities/rock_climbing "
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
+                    {selectActivityPackages.map((pkg, index) => (
+                      <Link
+                        key={index}
+                        href="/trip/trip_detail"
+                        onClick={() => setOpenNav(false)}
+                      >
+                        <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                          <Image
+                            src={pkg}
+                            alt={`Package ${index + 1}`}
+                            className="object-cover object-center w-full h-full rounded-3xl brightness-75"
+                          />
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                  {/* BUTTON  */}
+                  {/* BUTTON */}
                   <Link href="/">
                     <div className="relative mt-4">
                       <button className="bg-yellow-200 text-center w-[150px] rounded-3xl h-12 font-sans text-black text-xl font-semibold">
@@ -440,9 +397,9 @@ function Navbar({}: Props) {
             {/* TRAINING  */}
             <div className="group relative">
               <div
-                className={` flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
+                className={`flex gap-1 justify-center items-center cursor-pointer hover:text-yellow-500 ${
                   currentRoute.includes("/training")
-                    ? "text-yellow-500   duration-[0.5]"
+                    ? "text-yellow-500 duration-[0.5]"
                     : ""
                 }`}
               >
@@ -452,10 +409,14 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <div className="absolute hidden bg-[#FFFBEB] rounded-3xl  gap-2 group-hover:flex  duration-[0.5] top-[100%] left-0 w-[60vw]    shadow p-5">
+              <div className="absolute hidden nav-down bg-yellow-50 rounded-3xl gap-2 group-hover:flex duration-[0.5] top-[100%] left-0 w-[60vw]  shadow p-5">
                 <div className="flex flex-col w-[20%]">
                   {trainingLink.map((training) => (
-                    <div key={training.href} className="py-1 flex flex-col">
+                    <div
+                      key={training.href}
+                      className="py-1 flex flex-col"
+                      onClick={() => setSelectedTraining(training.name)}
+                    >
                       <Link href={training.href}>
                         <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-medium uppercase hover:text-yellow-500 cursor-pointer">
                           {training.name}
@@ -466,41 +427,23 @@ function Navbar({}: Props) {
                 </div>
                 <div className="flex w-[80%] flex-col border-l gap-5 justify-center pl-3 items-start">
                   <div className="grid grid-cols-4 w-full border-zinc-700 gap-5 overflow-hidden">
-                    <Link href="/training" onClick={() => setOpenNav(false)}>
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/trip/trip_detail"
-                      onClick={() => setOpenNav(false)}
-                    >
-                      <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
-                        <Image
-                          src={Package}
-                          alt=""
-                          className="object-cover object-center w-full h-full rounded-3xl brightness-75 "
-                        ></Image>
-                      </div>
-                    </Link>
+                    {selectTrainingPackages.map((pkg, index) => (
+                      <Link
+                        key={index}
+                        href="/trip/trip_detail"
+                        onClick={() => setOpenNav(false)}
+                      >
+                        <div className="w-full h-[25vh] cursor-pointer rounded-3xl">
+                          <Image
+                            src={pkg}
+                            alt={`Package ${index + 1}`}
+                            className="object-cover object-center w-full h-full rounded-3xl brightness-75"
+                          />
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                  {/* BUTTON  */}
+                  {/* BUTTON */}
                   <Link href="/">
                     <div className="relative mt-4">
                       <button className="bg-yellow-200 text-center w-[150px] rounded-3xl h-12 font-sans text-black text-xl font-semibold">
@@ -547,7 +490,7 @@ function Navbar({}: Props) {
             ></Image>
           </Link>
 
-          <div className="flex gap-3 text-[14px] font-medium items-center">
+          <div className="flex gap-5 text-[14px] font-medium items-center">
             {/* home  */}
             <Link href="/" className="group relative">
               <span
@@ -570,7 +513,7 @@ function Navbar({}: Props) {
                   className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
                 />
               </div>
-              <ul className="absolute hidden bg-[#FFFBEB] rounded-3xl group-hover:block duration-[0.5] top-[100%] left-0  whitespace-nowrap   shadow p-5">
+              <ul className="absolute hidden nav-down bg-yellow-50 rounded-3xl group-hover:block duration-[0.5] top-[100%] left-0  whitespace-nowrap   shadow p-5">
                 {companyLinks.map((link) => (
                   <li key={link.href} className="py-1">
                     <Link href={link.href}>
@@ -637,6 +580,45 @@ const activitiesLink = [
   { name: "Ice climbing ", href: "/other_activities/rock_climbing" },
 ];
 
+const activitiesPackage = [
+  {
+    name: "Canyoning",
+    package: [Paragliding2, Paragliding4, Paragliding5],
+  },
+  {
+    name: "Rafting",
+    package: [Paragliding1, Paragliding3, Paragliding2],
+  },
+  {
+    name: "Heritage Tour ",
+    package: [Paragliding1, Paragliding3, Paragliding4, Paragliding5],
+  },
+  {
+    name: "Paragliding",
+    package: [Paragliding1],
+  },
+  {
+    name: "Mountain Biking",
+    package: [Paragliding3, Paragliding2, Paragliding4, Paragliding5],
+  },
+  {
+    name: "Rock Climbing trip",
+    package: [Paragliding3, Paragliding2, Paragliding4, Paragliding5],
+  },
+  {
+    name: "Pilgrimage tour  ",
+    package: [
+      Paragliding1,
+      Paragliding3,
+      Paragliding2,
+      Paragliding4,
+      Paragliding5,
+    ],
+  },
+  { name: "Jungle Safari  ", package: [Paragliding3, Paragliding5] },
+  { name: "Ice climbing ", package: [Paragliding3] },
+];
+
 const trainingLink = [
   { name: "Basic Mountaineering course", href: "/training" },
   {
@@ -645,11 +627,36 @@ const trainingLink = [
   },
 ];
 
+const trainingPackage = [
+  {
+    name: "Basic Mountaineering course",
+    package: [BestSeller1],
+  },
+  {
+    name: "Preparation for 8000m peak climbing course",
+    package: [BestSeller1, BestSeller2, BestSeller3],
+  },
+];
 const expeditionsLink = [
   { name: "Above 8k", href: "/expedition/8000m" },
   { name: "Above 7k", href: "/expedition/7000m" },
-  { name: "Above 7k", href: "/expedition/6000m" },
+  { name: "Above 6k", href: "/expedition/6000m" },
   { name: "Above 5k", href: "/expedition/5000m" },
+  ,
+];
+
+const expeditionsPackage = [
+  { name: "Above 8k", package: [BestSeller1, BestSeller2, BestSeller3] },
+  {
+    name: "Above 7k",
+    package: [BestSeller1, BestSeller2, BestSeller3, BestSeller5],
+  },
+  {
+    name: "Above 6k",
+    package: [BestSeller1, BestSeller2, BestSeller3, BestSeller5],
+  },
+  { name: "Above 5k", package: [BestSeller1, BestSeller2] },
+  ,
 ];
 
 const treksLink = [
@@ -666,5 +673,31 @@ const treksLink = [
   {
     name: "High passes treks ",
     href: "/trek/annapurna_region_trekking",
+  },
+];
+
+const trekkingPackage = [
+  {
+    name: "Annapurna Region",
+    package: [BestSeller1, BestSeller2, BestSeller3, BestSeller5],
+  },
+  { name: "Everest Region", package: [BestSeller1, BestSeller2, BestSeller3] },
+  { name: "Langtang Region", package: [BestSeller1, BestSeller2, BestSeller3] },
+  { name: "Manaslu Region", package: [BestSeller1, BestSeller2, BestSeller3] },
+  {
+    name: "Other treks  Region",
+    package: [BestSeller1],
+  },
+  {
+    name: "Off beaten treks (Camping)",
+    package: [BestSeller2, BestSeller3],
+  },
+  {
+    name: "Short trek",
+    package: [BestSeller1, BestSeller2, BestSeller3],
+  },
+  {
+    name: "High passes treks ",
+    package: [BestSeller1, BestSeller3],
   },
 ];

@@ -69,7 +69,9 @@ export default function AboutHome({}: Props) {
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
+              <span className="text-sm italic font-medium text-yellow-400">
+                Alpine Trekking
+              </span>
             </div>
             <Image
               src={BestSeller1}
@@ -86,7 +88,9 @@ export default function AboutHome({}: Props) {
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
+              <span className="text-sm italic font-medium text-yellow-400">
+                Alpine Trekking
+              </span>
             </div>
             <Image
               src={BestSeller2}
@@ -103,7 +107,9 @@ export default function AboutHome({}: Props) {
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
+              <span className="text-sm italic font-medium text-yellow-400">
+                Alpine Trekking
+              </span>
             </div>
             <Image
               src={BestSeller3}
@@ -121,7 +127,9 @@ export default function AboutHome({}: Props) {
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
+              <span className="text-sm italic font-medium text-yellow-400">
+                Alpine Trekking
+              </span>
             </div>
             <Image
               src={BestSeller4}
@@ -138,7 +146,9 @@ export default function AboutHome({}: Props) {
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
+              <span className="text-sm italic font-medium text-yellow-400">
+                Alpine Trekking
+              </span>
             </div>
             <Image
               src={BestSeller5}
@@ -155,7 +165,9 @@ export default function AboutHome({}: Props) {
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
+              <span className="text-sm italic font-medium text-yellow-400">
+                Alpine Trekking
+              </span>
             </div>
             <Image
               src={BestSeller6}
@@ -172,7 +184,9 @@ export default function AboutHome({}: Props) {
               {/* distance  */}
               <span className="text-sm font-medium">5500m</span>
               {/* place  */}
-              <span className="text-sm italic font-medium text-yellow-400">Alpine Trekking</span>
+              <span className="text-sm italic font-medium text-yellow-400">
+                Alpine Trekking
+              </span>
             </div>
             <Image
               src={BestSeller7}
@@ -187,3 +201,5 @@ export default function AboutHome({}: Props) {
     </div>
   );
 }
+
+
